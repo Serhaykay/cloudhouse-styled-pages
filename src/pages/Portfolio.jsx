@@ -33,7 +33,7 @@ const Portfolio = () => {
   return (
     <div className="bg-[#F9FAFB] text-[#1E293B]">
       {/* Hero Section */}
-      <section className="relative text-center py-24 px-6 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white">
+      <section className="relative pt-64 text-center py-24 px-6 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}

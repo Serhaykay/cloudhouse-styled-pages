@@ -61,7 +61,7 @@ const Services = () => {
   return (
     <div className="pt-0 space-y-24 bg-[#F9FAFB] text-[#1E293B]">
       {/* Hero Section */}
-      <section className="text-center px-6 py-20 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white">
+      <section className="text-center px-6 pt-64 py-20 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white">
         <motion.h1
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
