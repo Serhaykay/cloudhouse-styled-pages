@@ -26,7 +26,7 @@ const Blog = () => {
     <div className="font-[Poppins]">
       {/* Hero */}
       <div className="bg-[#5B3CC4] py-20 px-6 md:px-20 text-center pt-64">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Blogs</h1>
+        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Cloudhouse Blog</h1>
         <p className="text-white text-lg max-w-2xl mx-auto">
           Insights, tutorials, and updates on everything from Shopify apps to smart customer engagement.
         </p>
