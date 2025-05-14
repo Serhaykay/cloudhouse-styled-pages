@@ -1,80 +1,96 @@
 import React, { useEffect, useState } from "react";
-import { client } from "../sanityClient";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { client } from "../sanityClient"; // Assuming client is properly configured
+import { Link } from "react-router-dom"; // For linking to individual blog posts
+import { PortableText } from "@portabletext/react"; // For rendering rich text
 
 const Blog = () => {
   const [posts, setPosts] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
+  // Fetch blog posts
   useEffect(() => {
-    client
-      .fetch(`*[_type == "post"]{
-        title,
-        slug,
-        publishedAt,
-        mainImage {
-          asset -> {
-            url
-          }
-        }
-      }`)
-      .then((data) => setPosts(data))
-      .catch(console.error);
+    const fetchPosts = async () => {
+      try {
+        const data = await client.fetch(
+          `*[_type == "post"]{
+            title,
+            slug {
+              current
+            },
+            mainImage {
+              asset -> {
+                url
+              }
+            },
+            publishedAt
+          }`
+        );
+        setPosts(data);
+        setLoading(false);
+      } catch (err) {
+        setError("Error fetching blog posts");
+        setLoading(false);
+        console.error(err);
+      }
+    };
+
+    fetchPosts();
   }, []);
 
+  // Loading and error handling
+  if (loading) {
+    return <div className="text-center py-20">Loading...</div>;
+  }
+
+  if (error) {
+    return <div className="text-center py-20 text-red-500">{error}</div>;
+  }
+
+  if (posts.length === 0) {
+    return <div className="text-center py-20">No blog posts found.</div>;
+  }
+
   return (
-    <div className="font-[Poppins]">
-      {/* Hero */}
-      <div className="bg-[#5B3CC4] py-20 px-6 md:px-20 text-center pt-64">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-4">Cloudhouse Blog</h1>
-        <p className="text-white text-lg max-w-2xl mx-auto">
-          Insights, tutorials, and updates on everything from Shopify apps to smart customer engagement.
-        </p>
-      </div>
-
-      {/* Blog Posts */}
-      <div className="bg-white px-6 md:px-20 py-16 space-y-10">
-        {posts.length > 0 ? (
-          posts.map((post, index) => (
-            <motion.div
-              key={index}
-              className="flex flex-col md:flex-row max-h-[400px] bg-[#f9f8ff] rounded-2xl shadow-md overflow-hidden transition-shadow hover:shadow-xl"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              viewport={{ once: true }}
-            >
-              {/* Image */}
+    <div className="font-[Poppins] max-w-7xl mx-auto px-4 py-20">
+      <h1 className="text-4xl font-bold text-[#5B3CC4] mb-12 text-center">Our Blog</h1>
+      
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {posts.map((post) => (
+          <div
+            key={post.slug.current}
+            className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-300 overflow-hidden flex flex-col"
+          >
+            {post.mainImage?.asset?.url && (
               <img
-                src={
-                  post.mainImage?.asset?.url ||
-                  "https://cdn.sanity.io/images/ncoi8u9l/production/e1ebdc6d916f6b52afd8fbdd9639e0a220a6eee1-204x192.png?w=2000&fit=max&auto=format"
-                }
+                src={post.mainImage.asset.url}
                 alt={post.title}
-                className="w-full md:w-[45%] h-[250px] md:h-full object-cover"
+                className="w-full h-56 object-cover"
               />
-
-              {/* Content */}
-              <div className="p-6 flex flex-col justify-center md:w-[55%]">
-                <h2 className="text-2xl font-semibold text-[#5B3CC4] mb-2">{post.title}</h2>
-                <p className="text-sm text-gray-500 mb-2">
-                  {new Date(post.publishedAt).toDateString()}
-                </p>
-                <Link
-                  to={`/blog/${post.slug.current}`}
-                  className="text-[#5B3CC4] hover:underline font-medium mt-auto"
-                >
-                  Read More →
-                </Link>
+            )}
+            <div className="p-6 flex flex-col flex-grow">
+              <h2 className="text-2xl font-semibold text-[#5B3CC4] mb-2">
+                <Link to={`/blog/${post.slug.current}`}>{post.title}</Link>
+              </h2>
+              <p className="text-sm text-gray-500 mb-4">
+                {new Date(post.publishedAt).toDateString()}
+              </p>
+              <div className="flex-grow line-clamp-3 text-gray-700 text-sm">
+                {/* Optional: Short excerpt from body */}
+                <PortableText value={post.body} />
               </div>
-            </motion.div>
-          ))
-        ) : (
-          <p className="text-center text-gray-500">No blog posts yet.</p>
-        )}
+              <Link
+                to={`/blog/${post.slug.current}`}
+                className="mt-4 text-[#5B3CC4] font-medium hover:underline"
+              >
+                Read more →
+              </Link>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
-  );
+  );  
 };
 
 export default Blog;
