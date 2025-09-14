@@ -9,6 +9,8 @@ import Navbar from './components/Navbar';
 import Blog from './pages/blog.jsx';
 import { Toaster } from 'react-hot-toast';
 import BlogPost from './pages/blogPost.jsx';
+import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
+import TermsOfService from './pages/TermsOfService.jsx';
 
 const App = () => {
   return (
@@ -25,6 +27,8 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="/terms-of-service" element={<TermsOfService />} />
           </Routes>
         </div>
       </Router>
