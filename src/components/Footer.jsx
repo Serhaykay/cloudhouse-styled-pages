@@ -56,7 +56,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.twitter.com/cloudhouse"
+                href="https://www.twitter.com/cloudhouse247"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#F9FAFB] hover:text-[#10B981]"
