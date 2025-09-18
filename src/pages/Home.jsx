@@ -27,6 +27,61 @@ import EverythingImage from "../assets/images/everything.jpeg";
 import fastImage from "../assets/images/faster.png";
 import ourexpertImage from "../assets/images/ourexpert.png";
 import cleancodeImage from "../assets/images/CleanCode.png";
+import stockimages from "../assets/images/stockimages.jpg";
+import Shopifytheme from "../assets/images/Shopifytheme.jpg";
+import appdev from "../assets/images/appdev.jpg";
+
+const testimonials = [
+  {
+    name: 'Sarah L.',
+    quote: 'Cloudhouse revamped our Shopify store in under a week. The old site was clunky and outdated, but now it feels modern, sleek, and so easy for our customers to use. The entire process was stress-free, and their team kept us updated every step of the way.'
+  },
+  {
+    name: 'James A.',
+    quote: 'Our site’s SEO improved dramatically within the first month. We went from barely appearing on Google to ranking on the first page for several keywords. The increase in organic traffic has been a huge win for our business. Highly recommend their service!'
+  },
+  {
+    name: 'Olivia P.',
+    quote: 'I had worked with two agencies before, and both overpromised and underdelivered. Cloudhouse was different. They listened, they asked the right questions, and they built us a clean, modern site that reflects our brand perfectly. Finally, I feel proud sending people to our website.'
+  },
+  {
+    name: 'Daniel K.',
+    quote: 'Excellent communication and lightning-fast delivery. I honestly thought building a website would take months, but they had everything ready in just a couple of weeks. I still can’t believe how smooth the process was—it felt like they read my mind.'
+  },
+  {
+    name: 'Maya R.',
+    quote: 'Our traffic doubled after the redesign. The new site loads instantly, works beautifully on mobile, and people stay longer. Customers have even told us they trust our business more now just because of how professional it looks. That’s priceless.'
+  },
+  {
+    name: 'Tom W.',
+    quote: 'We were in a desperate situation—our old site had crashed during a product launch, and we were losing sales by the hour. Cloudhouse stepped in, stabilized everything, and built us a new platform that’s bulletproof. They literally saved our business.'
+  },
+  {
+    name: 'Alicia D.',
+    quote: 'The team gave us a site that not only looks amazing but also loads super fast. Before, customers complained about pages taking forever; now we get comments about how smooth the experience feels. Our conversion rates jumped almost overnight.'
+  },
+  {
+    name: 'Victor S.',
+    quote: 'Professional, responsive, and creative. I’ve worked with a lot of freelancers and agencies, and Cloudhouse has been the easiest to deal with by far. They went above and beyond—even suggesting improvements I didn’t know I needed.'
+  },
+  {
+    name: 'Emily C.',
+    quote: 'The audit uncovered issues we didn’t even know about—broken links, slow-loading scripts, and missed SEO opportunities. After they fixed everything, we saw a 40% increase in inquiries within two weeks. That kind of impact is rare.'
+  },
+  {
+    name: 'Ryan M.',
+    quote: 'Cloudhouse is our go-to for all things web. Whenever we have a new campaign, a landing page, or a product launch, they handle it flawlessly. It feels like having an in-house team without the overhead.'
+  },
+  {
+    name: 'Sophia G.',
+    quote: 'They understood exactly what we needed. I was nervous because I’m not very technical, but they explained things so clearly and delivered a site that exceeded my expectations. My customers love it, and honestly, so do I!'
+  },
+  {
+    name: 'Leo T.',
+    quote: 'Affordable, reliable, and super skilled. I’ve recommended Cloudhouse to three friends already. Every time I log into my dashboard and see the sales coming in, I’m reminded this was the best investment I’ve made for my business.'
+  }
+];
+
 
 // Partner logos marquee
 const PartnerLogos = () => (
@@ -221,17 +276,17 @@ const Home = () => {
     {
       title: "Page Optimization",
       desc: "We fix Page Speed and Alt Image issues really Quick and Effectively",
-      img: EverythingImage,
+      img: stockimages,
     },
     {
       title: "App Development",
       desc: "We develop Mobile Apps for IOS and Android devices, and Web Apps",
-      img: EverythingImage,
+      img: appdev,
     },
     {
       title: "Shopify Theme Set ups",
       desc: "We offer theme customizations, PageBuilder and Shopify custom sections restructuring, Bug fixing, and layout optimisation.",
-      img: EverythingImage,
+      img: Shopifytheme,
     },
   ];
 
@@ -436,6 +491,49 @@ const Home = () => {
           Book a Free Consultation
         </Link>
       </section>
+{/* Testimonials Section */}
+<section className="bg-[#F3F4F6] px-6 py-16">
+  <h2 className="text-3xl font-heading text-center font-bold mb-10">
+    Client Testimonials
+  </h2>
+
+  {(() => {
+    const [showAll, setShowAll] = React.useState(false);
+    const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 4);
+
+    return (
+      <>
+        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {visibleTestimonials.map((testi, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white rounded-xl shadow-lg p-6 border border-gray-200"
+            >
+              <p className="italic mb-4">"{testi.quote}"</p>
+              <p className="font-semibold text-[#5B3CC4]">- {testi.name}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        {testimonials.length > 4 && (
+          <div className="text-center mt-10">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-6 py-3 bg-[#5B3CC4] text-white font-semibold rounded-lg hover:bg-[#4629a3] transition"
+            >
+              {showAll ? "View Less" : "View More"}
+            </button>
+          </div>
+        )}
+      </>
+    );
+  })()}
+</section>
+
 
       <Footer />
     </div>
