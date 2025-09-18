@@ -9,6 +9,7 @@ import "swiper/css/navigation";
 import Footer from "../components/Footer";
 import emailjs from 'emailjs-com';
 
+
 // images
 import bannerImage from "../assets/images/banner.jpeg";
 import shopifyImage from "../assets/images/shopify.svg";
@@ -51,6 +52,7 @@ const PartnerLogos = () => (
     </div>
   </section>
 );
+
 
 const AuditBanner = () => {
   const [formData, setFormData] = useState({
