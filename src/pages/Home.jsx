@@ -110,12 +110,12 @@ const AuditBanner = () => {
   };
 
   return (
-    <section className="bg-indigo-600 py-8 text-white relative overflow-hidden">
+    <section className="bg-[#1E293B] py-8 text-white relative overflow-hidden">
       <div className="max-w-8xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
           
           {/* Scrolling Marquee */}
-          <div className="overflow-hidden whitespace-nowrap bg-indigo-600 py-6">
+          <div className="overflow-hidden whitespace-nowrap bg-[#1E293B] py-6">
             <motion.div
               className="inline-block"
               initial={{ x: "0%" }}
@@ -142,7 +142,7 @@ const AuditBanner = () => {
           >
             <input
               type="email"
-              name="email" // ✅ matches {{email}}
+              name="email" // ✅ matches {{user_email}}
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter Your Email"
@@ -161,7 +161,7 @@ const AuditBanner = () => {
             <button
               type="submit"
               disabled={sending}
-              className="bg-white text-indigo-600 px-6 py-3 rounded-lg font-semibold hover:bg-indigo-100 transition whitespace-nowrap"
+              className="bg-emerald-500 text-[#F9FAFB] px-6 py-3 rounded-lg font-semibold hover:bg-indigo-100 transition whitespace-nowrap"
             >
               {sending ? "Sending..." : "Get Audit"}
             </button>
