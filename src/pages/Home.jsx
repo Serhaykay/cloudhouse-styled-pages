@@ -218,6 +218,21 @@ const Home = () => {
       desc: "We handle store issues quickly and professionally.",
       img: EverythingImage,
     },
+    {
+      title: "Page Optimization",
+      desc: "We fix Page Speed and Alt Image issues really Quick and Effectively",
+      img: EverythingImage,
+    },
+    {
+      title: "App Development",
+      desc: "We develop Mobile Apps for IOS and Android devices, and Web Apps",
+      img: EverythingImage,
+    },
+    {
+      title: "Shopify Theme Set ups",
+      desc: "We offer theme customizations, PageBuilder and Shopify custom sections restructuring, Bug fixing, and layout optimisation.",
+      img: EverythingImage,
+    },
   ];
 
   const features = [
