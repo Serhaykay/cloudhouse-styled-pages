@@ -8,6 +8,8 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Footer from "../components/Footer";
 import emailjs from 'emailjs-com';
+import Slider from "react-slick";
+
 
 
 // images
@@ -82,56 +84,62 @@ const testimonials = [
   }
 ];
 
-
 // Partner logos marquee
-const PartnerLogos = () => (
-  <section className="py-16 bg-gray-50">
-    <div className="max-w-7xl mx-auto px-6">
-      <h2 className="text-3xl font-bold text-center mb-8">Our Partners</h2>
+const PartnerLogos = () => {
+  const logos = [
+    upworkImage,
+    fiverrImage,
+    shopifyImage,
+    freelancerImage,
+    wordpressImage,
+    wooImage,
+    gemImage,
+    reploImage,
+    pageflyImage,
+  ];
 
-      <div className="overflow-hidden max-w-5xl mx-auto">
-        <motion.div
-          className="flex space-x-12"
-          initial={{ x: "0%" }}
-          animate={{ x: "-50%" }}
-          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
-        >
-          {/* First set */}
-          {[
-            upworkImage,
-            fiverrImage,
-            shopifyImage,
-            freelancerImage,
-            wordpressImage,
-            wooImage,
-            gemImage,
-            reploImage,
-            pageflyImage,
-          ].map((logo, i) => (
-            <img key={i} src={logo} alt="Partner" className="h-12 mx-6" />
-          ))}
+  const settings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 8000,
+    cssEase: "linear",
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    arrows: false,
+    pauseOnHover: false,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
+    ],
+  };
 
-          {/* Duplicate set for seamless loop */}
-          {[
-            upworkImage,
-            fiverrImage,
-            shopifyImage,
-            freelancerImage,
-            wordpressImage,
-            wooImage,
-            gemImage,
-            reploImage,
-            pageflyImage,
-          ].map((logo, i) => (
-            <img key={`dup-${i}`} src={logo} alt="Partner" className="h-12 mx-6" />
+  return (
+    <section className="py-8 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-8">
+          Trusted By <span className="text-emerald-600">2000+</span> Brands
+        </h2>
+
+        <Slider {...settings} className="w-full">
+          {logos.map((logo, i) => (
+            <div
+              key={i}
+              className="px-4 flex justify-center items-center border-t border-b border-gray-300"
+            >
+              <img
+                src={logo}
+                alt={`Partner ${i}`}
+                className="h-16 w-auto object-contain"
+              />
+            </div>
           ))}
-        </motion.div>
+        </Slider>
       </div>
-    </div>
-  </section>
-);
-
-
+    </section>
+  );
+};
 const AuditBanner = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -435,7 +443,7 @@ const Home = () => {
               <img
                 src={item.img}
                 alt={item.title}
-                className="w-full h-48 object-cover rounded-xl mb-4"
+                className="w-full h-48 object-contain rounded-xl mb-4"
               />
               <p className="text-lg text-slate-800 font-medium">{item.title}</p>
               <p className="text-sm text-slate-800">{item.desc}</p>
@@ -464,7 +472,7 @@ const Home = () => {
                   <img
                     src={item.img}
                     alt={item.title}
-                    className="w-full h-48 object-cover rounded-xl mb-4"
+                    className="w-full h-48 object-contain rounded-xl mb-4"
                   />
                   <p className="text-lg text-slate-800 font-medium">{item.title}</p>
                   <p className="text-sm text-slate-800 text-slate-800">{item.desc}</p>
