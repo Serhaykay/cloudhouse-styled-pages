@@ -66,7 +66,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.instagram.com/cloudhouse"
+                href="https://www.instagram.com/cloudhouse.info24"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#F9FAFB] hover:text-[#10B981]"
