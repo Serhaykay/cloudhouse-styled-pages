@@ -33,20 +33,43 @@ const PartnerLogos = () => (
   <section className="py-16 bg-gray-50">
     <div className="max-w-7xl mx-auto px-6">
       <h2 className="text-3xl font-bold text-center mb-8">Our Partners</h2>
-      <div className="overflow-hidden">
+
+      <div className="overflow-hidden max-w-5xl mx-auto">
         <motion.div
-          className="flex space-x-12 animate-marquee"
-          initial={{ x: "100%" }}
-          animate={{ x: "-150%" }}
-          transition={{ repeat: Infinity, duration: 50, ease: "linear" }}
+          className="flex space-x-12"
+          initial={{ x: "0%" }}
+          animate={{ x: "-50%" }}
+          transition={{ repeat: Infinity, duration: 10, ease: "linear" }}
         >
-          {[upworkImage, fiverrImage, shopifyImage, freelancerImage, wordpressImage, wooImage, gemImage, reploImage, pageflyImage].map(
-            (logo, i) => (
-              <div key={i} className="flex-shrink-0">
-                <img src={logo} alt="Partner" className="h-12 mx-6" />
-              </div>
-            )
-          )}
+          {/* First set */}
+          {[
+            upworkImage,
+            fiverrImage,
+            shopifyImage,
+            freelancerImage,
+            wordpressImage,
+            wooImage,
+            gemImage,
+            reploImage,
+            pageflyImage,
+          ].map((logo, i) => (
+            <img key={i} src={logo} alt="Partner" className="h-12 mx-6" />
+          ))}
+
+          {/* Duplicate set for seamless loop */}
+          {[
+            upworkImage,
+            fiverrImage,
+            shopifyImage,
+            freelancerImage,
+            wordpressImage,
+            wooImage,
+            gemImage,
+            reploImage,
+            pageflyImage,
+          ].map((logo, i) => (
+            <img key={`dup-${i}`} src={logo} alt="Partner" className="h-12 mx-6" />
+          ))}
         </motion.div>
       </div>
     </div>
@@ -124,16 +147,16 @@ const AuditBanner = () => {
               animate={{ x: "-50%" }}
               transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
             >
-              <span className="text-2xl font-bold text-white mr-8">
-                Get a Free Website Audit Now! &nbsp; Get a Free Website Audit Now! &nbsp;
-                Get a Free Website Audit Now! &nbsp; Get a Free Website Audit Now! &nbsp;
-                Get a Free Website Audit Now!
-              </span>
-              <span className="text-2xl font-bold text-white mr-8">
-                Get a Free Website Audit Now! &nbsp; Get a Free Website Audit Now! &nbsp;
-                Get a Free Website Audit Now! &nbsp; Get a Free Website Audit Now! &nbsp;
-                Get a Free Website Audit Now!
-              </span>
+             <span className="text-2xl font-bold text-white mr-8">
+              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
+              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
+              Get Free Website Page Review Now!!!
+            </span>
+            <span className="text-2xl font-bold text-white mr-8">
+              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
+              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
+              Get Free Website Page Review Now!!!
+            </span>
             </motion.div>
           </div>
 
