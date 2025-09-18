@@ -430,15 +430,15 @@ const Home = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.2 }}
-              className="bg-indigo-600 rounded-xl p-6 shadow-lg"
+              className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
             >
               <img
                 src={item.img}
                 alt={item.title}
                 className="w-full h-48 object-cover rounded-xl mb-4"
               />
-              <p className="text-lg font-medium">{item.title}</p>
-              <p className="text-sm text-indigo-100">{item.desc}</p>
+              <p className="text-lg text-slate-800 font-medium">{item.title}</p>
+              <p className="text-sm text-slate-800">{item.desc}</p>
             </motion.div>
           ))}
         </div>
@@ -475,22 +475,35 @@ const Home = () => {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="px-6 py-20 bg-gray-50 text-center">
-        <h2 className="text-3xl font-bold mb-6">
-          Let’s Build Something Amazing Together
-        </h2>
-        <p className="text-lg mb-8">
-          Ready to get started? We offer tailored solutions to suit your needs.
-          Book a free consultation with us!
-        </p>
-        <Link
-          to="/contact"
-          className="bg-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-600 transition"
-        >
-          Book a Free Consultation
-        </Link>
-      </section>
+{/* CTA */}
+<section className="px-6 py-20 bg-gray-50 text-center">
+  <h2 className="text-3xl font-bold mb-6">
+    Let’s Build Something Amazing Together
+  </h2>
+  <p className="text-lg mb-8">
+    Ready to get started? We offer tailored solutions to suit your needs.
+    Book a free consultation with us!
+  </p>
+  
+  <div className="flex flex-col md:flex-row items-center justify-center gap-4">
+    <Link
+      to="/contact"
+      className="bg-emerald-500 text-white px-6 py-3 rounded-xl font-semibold hover:bg-emerald-600 transition"
+    >
+      Book a Free Consultation
+    </Link>
+
+    <a
+      href="https://calendly.com/cloudhouse-info24/30min"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="bg-slate-800 text-white px-6 py-3 rounded-xl font-semibold hover:bg-slate-900 transition"
+    >
+      Book a Call
+    </a>
+  </div>
+</section>
+
 {/* Testimonials Section */}
 <section className="bg-[#F3F4F6] px-6 py-16">
   <h2 className="text-3xl font-heading text-center font-bold mb-10">
