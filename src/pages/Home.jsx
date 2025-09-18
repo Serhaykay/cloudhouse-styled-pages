@@ -119,7 +119,7 @@ const PartnerLogos = () => {
     <section className="py-8 bg-gray-50">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8">
-          Trusted By <span className="text-emerald-600">2000+</span> Brands
+          Trusted By <span className="text-emerald-600">20+</span> Partners
         </h2>
 
         <Slider {...settings} className="w-full">
