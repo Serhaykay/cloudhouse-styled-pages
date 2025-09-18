@@ -459,15 +459,15 @@ const Home = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.2 }}
-                  className="bg-indigo-600 rounded-xl p-6 shadow-lg"
+                  className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
                 >
                   <img
                     src={item.img}
                     alt={item.title}
                     className="w-full h-48 object-cover rounded-xl mb-4"
                   />
-                  <p className="text-lg font-medium">{item.title}</p>
-                  <p className="text-sm text-indigo-100">{item.desc}</p>
+                  <p className="text-lg text-slate-800 font-medium">{item.title}</p>
+                  <p className="text-sm text-slate-800 text-slate-800">{item.desc}</p>
                 </motion.div>
               </SwiperSlide>
             ))}
