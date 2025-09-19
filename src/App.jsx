@@ -12,6 +12,7 @@ import BlogPost from './pages/blogPost.jsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import TermsOfService from './pages/TermsOfService.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
+import PartnerPage from './pages/PartnerPage.jsx';
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-of-service" element={<TermsOfService />} />
+            <Route path="/PartnerPage" element={<PartnerPage />} />
           </Routes>
           <WhatsAppButton />
         </div>

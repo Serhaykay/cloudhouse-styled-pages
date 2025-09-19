@@ -17,7 +17,7 @@ const Navbar = () => {
     { name: 'Blog', to: '/blog' },
   ];
 
-  // Detect scroll direction for hiding/showing navbar
+  // Detect scroll direction
   useEffect(() => {
     let lastScrollY = window.scrollY;
 
@@ -37,7 +37,7 @@ const Navbar = () => {
 
   return (
     <>
-      {/* Sticky Header (hidden when menu is open) */}
+      {/* Sticky Header */}
       {!isOpen && (
         <motion.nav
           initial={{ y: 0 }}
@@ -57,7 +57,7 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Links */}
-            <div className="hidden md:flex gap-6 font-medium">
+            <div className="hidden md:flex items-center gap-6 font-medium">
               {navLinks.map((link) => (
                 <Link
                   key={link.to}
@@ -69,6 +69,14 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+
+              {/* Big Button */}
+              <Link
+                to="/partnerpage"
+                className="ml-6 px-6 py-3 rounded-xl bg-emerald-500 text-white font-semibold shadow-lg hover:bg-emerald-600 transition-all"
+              >
+                Become a Partner
+              </Link>
             </div>
 
             {/* Hamburger / X button */}
@@ -92,7 +100,6 @@ const Navbar = () => {
             transition={{ duration: 0.3 }}
             className="fixed top-0 right-0 h-full w-3/4 bg-[#1E293B] text-white z-50 p-6 md:hidden shadow-lg"
           >
-            {/* Close Button */}
             <button
               className="text-2xl mb-6"
               onClick={() => setIsOpen(false)}
@@ -113,6 +120,15 @@ const Navbar = () => {
                   {link.name}
                 </Link>
               ))}
+
+              {/* Big Button (mobile) */}
+              <Link
+                to="/partnerpage"
+                onClick={() => setIsOpen(false)}
+                className="mt-6 px-6 py-3 rounded-xl bg-[#5B3CC4] text-white font-semibold text-center shadow-lg hover:bg-[#4529a1] transition-all"
+              >
+                Become a Partner
+              </Link>
             </div>
           </motion.div>
         )}
