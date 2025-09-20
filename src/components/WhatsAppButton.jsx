@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaWhatsapp } from "react-icons/fa";
+import logo from '../assets/images/chlogo.png'
 
 const WhatsAppButton = () => {
   const [open, setOpen] = useState(false);
@@ -23,18 +24,37 @@ const WhatsAppButton = () => {
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute bottom-16 right-0 bg-white rounded-lg shadow-lg p-2 w-44">
-          {numbers.map((num, idx) => (
-            <a
-              key={idx}
-              href={`https://wa.me/${num.phone}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="block px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800"
-            >
-              {num.label}
-            </a>
-          ))}
+        <div className="absolute bottom-16 right-0 w-56">
+          {/* Popup Container */}
+          <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
+            {/* Header with Logo */}
+            <div className="flex items-center gap-2 p-3 border-b">
+              <img
+                src={logo} // replace with your logo path
+                alt="Logo"
+                className="w-6 h-6 object-contain"
+              />
+              <span className="font-semibold text-gray-700">Chat with us</span>
+            </div>
+
+            {/* Numbers */}
+            <div className="p-2">
+              {numbers.map((num, idx) => (
+                <a
+                  key={idx}
+                  href={`https://wa.me/${num.phone}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block px-3 py-2 rounded-md hover:bg-gray-100 text-gray-800"
+                >
+                  {num.label}
+                </a>
+              ))}
+            </div>
+
+            {/* Chat bubble (arrow) */}
+            <div className="absolute -bottom-2 right-4 w-4 h-4 bg-white rotate-45 shadow-md"></div>
+          </div>
         </div>
       )}
     </div>

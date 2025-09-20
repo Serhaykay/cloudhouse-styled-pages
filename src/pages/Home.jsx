@@ -360,7 +360,10 @@ const Home = () => {
       <AuditBanner />
 
       {/* Partners */}
-      <PartnerLogos />
+      <div className="py-16">
+      <PartnerLogos />  
+
+      </div>
 
       {/* Services */}
       <section className="px-6 max-w-6xl mx-auto text-center">
@@ -423,7 +426,11 @@ const Home = () => {
       </section>
 
       {/* Partners again */}
+
+      <div className="py-16">
       <PartnerLogos />
+
+      </div>
 
       {/* Features */}
       <section className="bg-slate-800 text-white py-16 px-6">
