@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import CloudhousePackages from '../components/CloudhousePackages'
 import Footer from "../components/Footer";
 import emailjs from 'emailjs-com';
 import Slider from "react-slick";
@@ -517,6 +518,12 @@ const Home = () => {
       Book a Call
     </a>
   </div>
+</section>
+
+{/* Packages section */}
+
+<section>
+  <CloudhousePackages />
 </section>
 
 {/* Testimonials Section */}
