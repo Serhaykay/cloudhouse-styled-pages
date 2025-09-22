@@ -433,63 +433,98 @@ const Home = () => {
 
       </div>
 
-      {/* Features */}
-      <section className="bg-slate-800 text-white py-16 px-6">
-        <h2 className="text-3xl font-bold text-center mb-10">
-          Why Choose Cloudhouse?
-        </h2>
-        <div className="hidden md:grid max-w-5xl mx-auto md:grid-cols-3 gap-8 text-center">
-          {features.map((item, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.2 }}
-              className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
-            >
-              <img
-                src={item.img}
-                alt={item.title}
-                className="w-full h-48 object-contain rounded-xl mb-4"
-              />
-              <p className="text-lg text-slate-800 font-medium">{item.title}</p>
-              <p className="text-sm text-slate-800">{item.desc}</p>
-            </motion.div>
-          ))}
-        </div>
-        {/* Mobile Swiper */}
-        <div className="md:hidden">
-          <Swiper
-            spaceBetween={16}
-            slidesPerView={1}
-            modules={[Autoplay, Pagination, Navigation]}
-            autoplay={{ delay: 3000 }}
-            pagination={{ clickable: true }}
-            navigation={true}
+{/* === Features Section with Slideshow (your original design kept) === */}
+<section className="bg-slate-800 text-white py-16 px-6">
+  <h2 className="text-3xl font-bold text-center mb-10">
+    Why Choose Cloudhouse?
+  </h2>
+
+  {/* Desktop Grid */}
+  <div className="hidden md:grid max-w-5xl mx-auto md:grid-cols-3 gap-8 text-center">
+    {features.map((item, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.2 }}
+        className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
+      >
+        <img
+          src={item.img}
+          alt={item.title}
+          className="w-full h-48 object-contain rounded-xl mb-4"
+        />
+        <p className="text-lg text-slate-800 font-medium">{item.title}</p>
+        <p className="text-sm text-slate-800">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+
+  {/* Mobile Swiper */}
+  <div className="md:hidden">
+    <Swiper
+      spaceBetween={16}
+      slidesPerView={1}
+      modules={[Autoplay, Pagination, Navigation]}
+      autoplay={{ delay: 3000 }}
+      pagination={{ clickable: true }}
+      navigation={true}
+    >
+      {features.map((item, i) => (
+        <SwiperSlide key={i}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.2 }}
+            className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
           >
-            {features.map((item, i) => (
-              <SwiperSlide key={i}>
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: i * 0.2 }}
-                  className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
-                >
-                  <img
-                    src={item.img}
-                    alt={item.title}
-                    className="w-full h-48 object-contain rounded-xl mb-4"
-                  />
-                  <p className="text-lg text-slate-800 font-medium">{item.title}</p>
-                  <p className="text-sm text-slate-800 text-slate-800">{item.desc}</p>
-                </motion.div>
-              </SwiperSlide>
-            ))}
-          </Swiper>
-        </div>
-      </section>
+            <img
+              src={item.img}
+              alt={item.title}
+              className="w-full h-48 object-contain rounded-xl mb-4"
+            />
+            <p className="text-lg text-slate-800 font-medium">{item.title}</p>
+            <p className="text-sm text-slate-800">{item.desc}</p>
+          </motion.div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+  </div>
+
+  {/* === New Sub-Section === */}
+  <div className="max-w-5xl mx-auto mt-16 grid md:grid-cols-3 gap-8 text-center">
+    {[
+      {
+        title: "5+ Years of Industry Expertise",
+        desc: "We've gained deep insights and hands-on experience in delivering high-quality solutions tailored to our clients' unique needs. Our proven track record reflects our commitment to excellence and continuous growth in a competitive digital landscape.",
+      },
+      {
+        title: "150+ Successful Projects Delivered",
+        desc: "We’ve worked with businesses of all sizes to help them grow and succeed through expert Shopify solutions.",
+      },
+      {
+        title: "Serving Clients in 27+ Countries",
+        desc: "Businesses around the world trust us to deliver custom Shopify solutions tailored to a wide range of markets and industries.",
+      },
+    ].map((item, i) => (
+      <motion.div
+        key={i}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ delay: i * 0.2 }}
+        className="bg-[#1E293B] text-white rounded-xl p-8 shadow-lg"
+      >
+        <p className="text-xl font-bold mb-4">{item.title}</p>
+        <p className="text-sm text-gray-300">{item.desc}</p>
+      </motion.div>
+    ))}
+  </div>
+</section>
+
+
 
 {/* CTA */}
 <section className="px-6 py-20 bg-gray-50 text-center">
