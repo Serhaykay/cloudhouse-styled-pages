@@ -116,7 +116,7 @@ const PartnerLogos = () => {
   };
 
   return (
-    <section className="py-8 bg-gray-50">
+    <section className="py-8 bg-gray-50 mt-16 pt-16 pb-16">
       <div className="max-w-7xl mx-auto px-6">
         <h2 className="text-3xl font-bold text-center mb-8">
           Trusted By <span className="text-emerald-600">20+</span> Partners
