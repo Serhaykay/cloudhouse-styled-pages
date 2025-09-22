@@ -6,6 +6,7 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import CloudhousePackages from '../components/CloudhousePackages'
 import Footer from "../components/Footer";
 import emailjs from 'emailjs-com';
 import Slider from "react-slick";
@@ -360,7 +361,10 @@ const Home = () => {
       <AuditBanner />
 
       {/* Partners */}
-      <PartnerLogos />
+      <div className="py-16">
+      <PartnerLogos />  
+
+      </div>
 
       {/* Services */}
       <section className="px-6 max-w-6xl mx-auto text-center">
@@ -423,7 +427,11 @@ const Home = () => {
       </section>
 
       {/* Partners again */}
+
+      <div className="py-16">
       <PartnerLogos />
+
+      </div>
 
       {/* Features */}
       <section className="bg-slate-800 text-white py-16 px-6">
@@ -510,6 +518,12 @@ const Home = () => {
       Book a Call
     </a>
   </div>
+</section>
+
+{/* Packages section */}
+
+<section>
+  <CloudhousePackages />
 </section>
 
 {/* Testimonials Section */}
