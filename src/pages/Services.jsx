@@ -138,17 +138,17 @@ const Services = () => {
       </section>
 
       {/* FAQ Accordion Section */}
-      <section className="max-w-4xl mx-auto px-6">
+      {/* <section className="max-w-4xl mx-auto px-6">
         <h2 className="text-3xl font-heading text-center font-bold mb-10">Frequently Asked Questions</h2>
         <Accordion>
           {faqs.map((item, i) => (
             <div key={i} question={item.question} answer={item.answer} />
           ))}
         </Accordion>
-      </section>
+      </section> */}
 
       {/* Call to Action Section */}
-      <section className="bg-[#1E293B] text-white text-center px-6 py-16">
+      <section className="bg-[#1E293B] text-white text-center px-6 py-16 my-0">
         <h2 className="text-3xl font-heading font-bold mb-4">Let’s Build Together</h2>
         <p className="text-lg font-body mb-8">Have a custom project in mind? Let’s craft a solution just for you.</p>
         <Link
@@ -157,10 +157,11 @@ const Services = () => {
         >
           Request a Free Quote
         </Link>
-      </section>
-
+        
       {/* Footer */}
       <Footer />
+      </section>
+
     </div>
   );
 };

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 const Packages = () => {
   const plans = [
@@ -17,6 +18,7 @@ const Packages = () => {
       ],
       button: "Get Started",
       highlight: false,
+      link: null,
     },
     {
       name: "Growth Package",
@@ -36,7 +38,8 @@ const Packages = () => {
         "API & CRM integrations (Mailchimp, Klaviyo, HubSpot)",
       ],
       button: "Get Started",
-      highlight: true, // highlight Growth package
+      highlight: true, // most popular
+      link: null,
     },
     {
       name: "Custom Package",
@@ -54,6 +57,7 @@ const Packages = () => {
       ],
       button: "Contact Us",
       highlight: false,
+      link: "/contact",
     },
     {
       name: "Monthly Maintenance",
@@ -73,8 +77,15 @@ const Packages = () => {
       ],
       button: "Subscribe",
       highlight: false,
+      link: "/contact",
     },
   ];
+
+  const [expanded, setExpanded] = useState({});
+
+  const toggleExpand = (idx) => {
+    setExpanded((prev) => ({ ...prev, [idx]: !prev[idx] }));
+  };
 
   return (
     <section className="py-12 bg-gray-50">
@@ -83,63 +94,103 @@ const Packages = () => {
           Our Service Packages
         </h2>
 
-        <div className="grid md:grid-cols-4 gap-6">
-          {plans.map((plan, idx) => (
-            <div
-              key={idx}
-              className={`relative bg-white rounded-xl shadow-lg p-6 flex flex-col justify-between border
-                ${plan.highlight ? "border-blue-500 ring-2 ring-blue-200" : "border-gray-200"}
-              `}
-            >
-              {/* Highlight label */}
-              {plan.highlight && (
-                <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-blue-500 text-white text-xs px-3 py-1 rounded-full">
-                  Most Popular
-                </span>
-              )}
+        <div className="grid md:grid-cols-4 gap-6 items-stretch">
+          {plans.map((plan, idx) => {
+            const isExpanded = expanded[idx];
+            const visibleFeatures = isExpanded
+              ? plan.features
+              : plan.features.slice(0, 5);
 
-              <div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-2">
-                  {plan.name}
-                </h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  {plan.description}
-                </p>
-                <ul className="space-y-2 max-h-64 overflow-y-auto pr-2">
-                  {plan.features.map((feature, i) => (
-                    <li key={i} className="flex items-start text-gray-700">
-                      <svg
-                        className="w-5 h-5 text-green-500 mr-2 flex-shrink-0 mt-0.5"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              <button
-                className={`mt-6 w-full py-2 rounded-lg font-medium transition
+            return (
+              <div
+                key={idx}
+                className={`relative bg-white rounded-xl shadow-md p-4 flex flex-col h-full border transition
                   ${
                     plan.highlight
-                      ? "bg-blue-500 hover:bg-blue-600 text-white"
-                      : "bg-gray-100 hover:bg-gray-200 text-gray-800"
+                      ? "border-emerald-500 ring-2 ring-emerald-500/30"
+                      : "border-gray-200"
                   }
                 `}
               >
-                {plan.button}
-              </button>
-            </div>
-          ))}
+                {/* Highlight label */}
+                {plan.highlight && (
+                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-emerald-500 text-white text-xs px-3 py-1 rounded-full">
+                    Most Popular
+                  </span>
+                )}
+
+                <div className="flex-1">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    {plan.name}
+                  </h3>
+                  <p className="text-xs text-gray-600 mb-3">
+                    {plan.description}
+                  </p>
+
+                  <ul className="space-y-2 mb-2">
+                    {visibleFeatures.map((feature, i) => (
+                      <li
+                        key={i}
+                        className="flex items-start text-gray-700 text-sm"
+                      >
+                        <svg
+                          className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          viewBox="0 0 24 24"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M5 13l4 4L19 7"
+                          />
+                        </svg>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  {plan.features.length > 5 && (
+                    <button
+                      onClick={() => toggleExpand(idx)}
+                      className="mt-2 inline-block text-xs px-3 py-1 rounded-full border border-emerald-500 text-emerald-600 hover:bg-emerald-500 hover:text-white transition"
+                    >
+                      {isExpanded ? "Show Less" : "Show More"}
+                    </button>
+                  )}
+                </div>
+
+                {/* Buttons */}
+                {plan.link ? (
+                  <Link
+                    to={plan.link}
+                    className={`mt-4 w-full py-2 rounded-lg font-medium transition text-center
+                      ${
+                        plan.highlight
+                          ? "bg-emerald-500 text-[#F9FAFB] hover:bg-emerald-600"
+                          : "bg-gray-100 border border-gray-300 text-gray-800 hover:bg-emerald-500 hover:text-[#F9FAFB]"
+                      }
+                    `}
+                  >
+                    {plan.button}
+                  </Link>
+                ) : (
+                  <button
+                    className={`mt-4 w-full py-2 rounded-lg font-medium transition
+                      ${
+                        plan.highlight
+                          ? "bg-emerald-500 text-[#F9FAFB] hover:bg-emerald-600"
+                          : "bg-gray-100 border border-gray-300 text-gray-800 hover:bg-emerald-500 hover:text-[#F9FAFB]"
+                      }
+                    `}
+                  >
+                    {plan.button}
+                  </button>
+                )}
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>
