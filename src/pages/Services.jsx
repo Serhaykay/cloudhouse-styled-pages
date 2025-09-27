@@ -7,6 +7,7 @@ import searchengineImage from '../assets/images/search-engine.png';
 import webdevImage from '../assets/images/webdev.png';
 import webcamImage from '../assets/images/webcam.png';
 import cleanImage from '../assets/images/CleanCode.png';
+import CloudhousePackages from '../components/CloudhousePackages'
 
 const services = [
   {
@@ -56,6 +57,62 @@ const testimonials = [
     quote: 'Our site’s SEO improved dramatically within the first month. Highly recommend their service.'
   }
 ];
+// Partner logos marquee
+const PartnerLogos = () => {
+  const logos = [
+    upworkImage,
+    fiverrImage,
+    shopifyImage,
+    freelancerImage,
+    wordpressImage,
+    wooImage,
+    gemImage,
+    reploImage,
+    pageflyImage,
+  ];
+
+  const settings = {
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 0,
+    speed: 8000,
+    cssEase: "linear",
+    slidesToShow: 6,
+    slidesToScroll: 1,
+    arrows: false,
+    pauseOnHover: false,
+    responsive: [
+      { breakpoint: 1024, settings: { slidesToShow: 4 } },
+      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 480, settings: { slidesToShow: 2 } },
+    ],
+  };
+
+  return (
+    <section className="py-8 bg-gray-50 pt-8 pb-8">
+      <div className="max-w-7xl mx-auto px-6">
+        <h2 className="text-3xl font-bold text-center mb-16">
+          Trusted By <span className="text-emerald-600">20+</span> Partners
+        </h2>
+
+        <Slider {...settings} className="w-full">
+          {logos.map((logo, i) => (
+            <div
+              key={i}
+              className="px-4 flex justify-center items-center border-t border-b border-gray-300"
+            >
+              <img
+                src={logo}
+                alt={`Partner ${i}`}
+                className="h-16 w-auto object-contain"
+              />
+            </div>
+          ))}
+        </Slider>
+      </div>
+    </section>
+  );
+};
 
 const Services = () => {
   return (
@@ -116,6 +173,12 @@ const Services = () => {
           ))}
         </div>
       </section>
+
+    
+
+    <section>
+      <CloudhousePackages />
+    </section>
 
       {/* Testimonials Section */}
       <section className="bg-[#F3F4F6] px-6 py-16">

@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import logoImage from '../assets/images/chlogo.png';
+import profile1 from '../assets/images/profile1.jpg';
 
 const About = () => {
   return (
@@ -92,21 +93,21 @@ const About = () => {
         <div className="grid md:grid-cols-3 gap-12">
           <div className="text-center">
             <img
-              src="/path-to-team-member1.jpg"
+              src= {profile1}
               alt="Team Member 1"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
             <h3 className="font-semibold text-[#5B3CC4]">Usman A.O</h3>
-            <p className="text-sm text-gray-700">Lead Developer</p>
+            <p className="text-sm text-gray-700">Developer</p>
           </div>
           <div className="text-center">
             <img
-              src="/path-to-team-member2.jpg"
+              src="/profile1.jpg"
               alt="Team Member 2"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="font-semibold text-[#5B3CC4]">Jane Smith</h3>
-            <p className="text-sm text-gray-700">UI/UX Designer</p>
+            <h3 className="font-semibold text-[#5B3CC4]">Ralp A.</h3>
+            <p className="text-sm text-gray-700">Project Manager</p>
           </div>
           <div className="text-center">
             <img
@@ -114,8 +115,8 @@ const About = () => {
               alt="Team Member 3"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
-            <h3 className="font-semibold text-[#5B3CC4]">Lateefah U.A</h3>
-            <p className="text-sm text-gray-700">Project Manager</p>
+            <h3 className="font-semibold text-[#5B3CC4]">Emmy A.O</h3>
+            <p className="text-sm text-gray-700">Developer</p>
           </div>
         </div>
       </section>
