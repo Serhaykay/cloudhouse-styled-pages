@@ -10,6 +10,8 @@ import CloudhousePackages from '../components/CloudhousePackages'
 import Footer from "../components/Footer";
 import emailjs from 'emailjs-com';
 import Slider from "react-slick";
+import { toast } from "react-hot-toast";
+
 
 
 
@@ -155,8 +157,24 @@ const AuditBanner = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  // Check if email already exists in SheetDB
+  const checkEmailExists = async (email) => {
+    try {
+      const res = await fetch(
+        `https://sheetdb.io/api/v1/6y0ilhmev30cb/search?email=${encodeURIComponent(
+          email
+        )}`
+      );
+      const data = await res.json();
+      return data.length > 0;
+    } catch (err) {
+      console.error("Error checking email:", err);
+      return false; // fallback: allow submission if check fails
+    }
+  };
+
   // Handle form submission
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     // Validate URL
@@ -169,69 +187,76 @@ const AuditBanner = () => {
     setError("");
     setSending(true);
 
-    // Payload must match template variables: {{email}}, {{website_url}}, {{time}}
-    const payload = {
-      user_email: formData.email,
-      website_url: formData.website_url,
-      user_name: "Website Audit Request",
-      title: formData.website_url,
-      time: new Date().toLocaleString(),
-    };
-
-    emailjs
-      .send(
-        "service_4vgij7w", 
-        "template_c4t22nd", 
-        payload,
-        "L1n6Ev9Xt5gNmQkrD" 
-      )
-      .then(() => {
-        toast.success("Audit request sent successfully!");
-        setFormData({ email: "", website_url: "" });
-      })
-      .catch((error) => {
-        console.error("EmailJS error:", error);
-        toast.error("Failed to send audit request. Please try again later.");
-      })
-      .finally(() => {
+    try {
+      // Check for duplicate email
+      const emailExists = await checkEmailExists(formData.email);
+      if (emailExists) {
+        toast.error("⚠️ This email has already submitted a request.");
         setSending(false);
+        return;
+      }
+
+      // Prepare payload for SheetDB
+      const payload = {
+        data: {
+          email: formData.email,
+          website_url: formData.website_url,
+          requested_at: new Date().toISOString(),
+        },
+      };
+
+      // Submit to SheetDB
+      const res = await fetch("https://sheetdb.io/api/v1/6y0ilhmev30cb", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
+
+      if (res.ok) {
+        toast.success("🎉 Audit request submitted successfully! Our team will get back to you within 24hrs. Thank you!");
+        setFormData({ email: "", website_url: "" });
+      } else {
+        const errorData = await res.json();
+        console.error("SheetDB error:", errorData);
+        toast.error("⚠️ Failed to submit request. Check console.");
+      }
+    } catch (err) {
+      console.error("Submission error:", err);
+      toast.error("⚠️ Failed to submit request. Try again.");
+    } finally {
+      setSending(false);
+    }
   };
 
   return (
     <section className="bg-[#1E293B] py-8 text-white relative overflow-hidden">
       <div className="max-w-8xl mx-auto px-6">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          
           {/* Scrolling Marquee */}
-          <div className="overflow-hidden whitespace-nowrap bg-[#1E293B] py-6">
+          <div className="overflow-hidden whitespace-nowrap bg-[#1E293B] py-6 w-full">
             <motion.div
               className="inline-block"
               initial={{ x: "0%" }}
               animate={{ x: "-50%" }}
               transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
             >
-             <span className="text-2xl font-bold text-white mr-8">
-              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
-              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
-              Get Free Website Page Review Now!!!
-            </span>
-            <span className="text-2xl font-bold text-white mr-8">
-              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
-              Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp;
-              Get Free Website Page Review Now!!!
-            </span>
+              <span className="text-2xl font-bold text-white mr-8">
+                Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!!
+              </span>
+              <span className="text-2xl font-bold text-white mr-8">
+                Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!! &nbsp; Get Free Website Page Review Now!!!
+              </span>
             </motion.div>
           </div>
 
-          {/* Form */}
+          {/* Audit Form */}
           <form
             className="flex flex-col md:flex-row items-center gap-4 w-full md:w-auto"
             onSubmit={handleSubmit}
           >
             <input
               type="email"
-              name="email" // ✅ matches {{user_email}}
+              name="email"
               value={formData.email}
               onChange={handleChange}
               placeholder="Enter Your Email"
@@ -240,7 +265,7 @@ const AuditBanner = () => {
             />
             <input
               type="text"
-              name="website_url" // ✅ matches {{website_url}}
+              name="website_url"
               value={formData.website_url}
               onChange={handleChange}
               placeholder="Enter Website URL"

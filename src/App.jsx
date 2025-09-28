@@ -13,6 +13,7 @@ import PrivacyPolicy from './pages/PrivacyPolicy.jsx';
 import TermsOfService from './pages/TermsOfService.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
 import PartnerPage from './pages/PartnerPage.jsx';
+import NewsletterPopup from './components/NewsletterPopup';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
             <Route path="/PartnerPage" element={<PartnerPage />} />
           </Routes>
           <WhatsAppButton />
+          <NewsletterPopup />
         </div>
       </Router>
     </>
