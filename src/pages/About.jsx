@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import logoImage from '../assets/images/chlogo.png';
 import profile1 from '../assets/images/profile1.jpg';
+import profile2 from '../assets/images/profile2.jpg'
 
 const About = () => {
   return (
@@ -102,7 +103,7 @@ const About = () => {
           </div>
           <div className="text-center">
             <img
-              src="/profile1.jpg"
+              src={profile2}
               alt="Team Member 2"
               className="w-32 h-32 rounded-full mx-auto mb-4"
             />
