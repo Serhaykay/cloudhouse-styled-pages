@@ -455,7 +455,7 @@ const Home = () => {
                 alt={item.title}
                 className="w-full h-48 object-cover rounded-xl mb-4"
               />
-              <h3 className="text-xl font-semibold text-indigo-600 mb-2">
+              <h3 className="text-xl font-semibold text-green-600 mb-2">
                 {item.title}
               </h3>
               <p className="text-sm">{item.desc}</p>
@@ -486,7 +486,7 @@ const Home = () => {
                     alt={item.title}
                     className="w-full h-48 object-cover rounded-xl mb-4"
                   />
-                  <h3 className="text-xl font-semibold text-indigo-600 mb-2">
+                  <h3 className="text-xl font-semibold text-green-600 mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm">{item.desc}</p>
@@ -507,7 +507,7 @@ const Home = () => {
       {/* Features */}
       <section className="bg-slate-800 text-white py-16 px-6">
         <h2 className="text-3xl font-bold text-center mb-10">
-          Why Choose Cloudhouse?
+          Why Choose Cloudhouse247?
         </h2>
         <div className="hidden md:grid max-w-5xl mx-auto md:grid-cols-3 gap-8 text-center">
           {features.map((item, i) => (
@@ -620,7 +620,7 @@ const Home = () => {
               className="bg-white rounded-xl shadow-lg p-6 border border-gray-200"
             >
               <p className="italic mb-4">"{testi.quote}"</p>
-              <p className="font-semibold text-[#5B3CC4]">- {testi.name}</p>
+              <p className="font-semibold text-emerald-500">- {testi.name}</p>
             </motion.div>
           ))}
         </div>
@@ -629,7 +629,7 @@ const Home = () => {
           <div className="text-center mt-10">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 bg-[#5B3CC4] text-white font-semibold rounded-lg hover:bg-[#4629a3] transition"
+              className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-lg hover:bg-emerald-600 transition"
             >
               {showAll ? "View Less" : "View More"}
             </button>
