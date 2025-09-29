@@ -12,9 +12,9 @@ const Portfolio = () => {
       video: 'https://cdn.shopify.com/videos/c/o/v/9b927f8c0ee746e79b240b7e8989f5b6.mp4',
     },
     {
-      title: 'Personal Blog Platform',
-      description: 'A modern React.js-powered blog platform with real-time updates and scalable architecture.',
-      video: 'https://cdn.shopify.com/videos/c/o/v/97ab3c982c404b4eb1d78e9f9b43d6a1.mp4',
+      title: 'Synthesia website clone',
+      description: 'A Synthesia-inspired website clone with HTML, CSS, and JavaScript, highlighting front-end development, layout design, and DOM interactivity',
+      video: 'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
     },
     {
       title: 'Corporate Website for Tech Company',
