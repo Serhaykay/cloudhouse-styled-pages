@@ -11,6 +11,7 @@ import Footer from "../components/Footer";
 import emailjs from 'emailjs-com';
 import Slider from "react-slick";
 import { toast } from "react-hot-toast";
+import Accordion from '@/components/ui/accordion';
 
 
 
@@ -35,6 +36,74 @@ import cleancodeImage from "../assets/images/CleanCode.png";
 import stockimages from "../assets/images/stockimages.jpg";
 import Shopifytheme from "../assets/images/Shopifytheme.jpg";
 import appdev from "../assets/images/appdev.jpg";
+
+
+// Add new faqs array
+const faqs = [
+  {
+    question: "Why choose Cloudhouse247?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          <strong>1. 5+ years of Industry Expertise:</strong> We’ve gained deep
+          insights and hands-on experience in delivering high-quality solutions
+          tailored to our clients' unique needs. Our proven track record
+          reflects our commitment to excellence and continuous growth in a
+          competitive digital landscape.
+        </p>
+        <p>
+          <strong>2. 150+ Successful Projects Delivered:</strong> We’ve worked
+          with businesses of all sizes to help them grow and succeed through
+          expert Shopify solutions.
+        </p>
+        <p>
+          <strong>3. Serving Clients in 27+ Countries:</strong> Businesses
+          around the world trust us to deliver custom Shopify solutions tailored
+          to a wide range of markets and industries.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Who Can Join Our Partner Program?",
+    answer: (
+      <p>
+        Anyone! No coding or tech background required. If you know someone who
+        needs help building or growing an online store, web development, SEO,
+        and page optimization you can partner with us. Whether you're a business
+        owner or individual, simply connect us to someone seeking eCommerce or
+        marketing services—there's an opportunity for you.
+      </p>
+    ),
+  },
+  {
+    question: "How can I become a partner?",
+    answer: (
+      <p>
+        You only need to register with us as a partner{" "}
+        <Link to="/contact" className="text-indigo-300 underline">
+          here
+        </Link>
+        .
+      </p>
+    ),
+  },
+  {
+    question: "How much would you pay for each project we do together?",
+    answer:
+      "It depends on the amount of the project, but our commission ranges from 20% to 30%.",
+  },
+  {
+    question: "Do I need to do anything?",
+    answer: "No, our team does all the heavy lifting.",
+  },
+  {
+    question: "Do you pay me instantly?",
+    answer:
+      "You will receive your payment 30 days after the client officially starts working with us.",
+  },
+];
+
 
 const testimonials = [
   {
@@ -629,8 +698,23 @@ const Home = () => {
   })()}
 </section>
 
+{/* FAQ Accordion Section */}
+  <section className="max-w-4xl mx-auto my-4 px-6 py-12">
+  <h2 className="text-3xl font-heading text-center font-bold mb-10">
+    Frequently Asked Questions
+  </h2>
 
+  <Accordion type="single" collapsible className="space-y-4">
+    {faqs.map((item, i) => (
+      <div key={i} question={item.question} answer={item.answer} />
+    ))}
+  </Accordion>
+</section>
+
+<div>
       <Footer />
+
+</div>
     </div>
   );
 };
