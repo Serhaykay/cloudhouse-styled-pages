@@ -141,7 +141,7 @@ const Footer = () => {
           <h3 className="text-xl font-heading font-semibold mb-6">
             Follow Us
           </h3>
-          <ul className="flex space-x-6 text-xl mb-6">
+          <ul className="flex space-x-6 text-xl mb-6 justify-center">
             <li>
               <a
                 href="https://www.linkedin.com/company/cloudhouse"
