@@ -28,7 +28,7 @@ const WhatsAppButton = () => {
           {/* Popup Container */}
           <div className="relative bg-white rounded-lg shadow-lg overflow-hidden">
             {/* Header with Logo */}
-            <div className="flex items-center gap-2 p-3 border-b">
+            <div className="flex items-center gap-2 p-3 border-b border-b-emerald-400">
               <img
                 src={logo} // replace with your logo path
                 alt="Logo"

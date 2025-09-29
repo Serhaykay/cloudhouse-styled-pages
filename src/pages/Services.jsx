@@ -214,7 +214,7 @@ const Services = () => {
               className="h-40 w-full object-contain md:object-cover rounded-xl mb-4"
             />
 
-            <h3 className="text-xl font-accent text-[#5B3CC4] font-semibold mb-2">{service.title}</h3>
+            <h3 className="text-xl font-accent text-emerald-500 font-semibold mb-2">{service.title}</h3>
             <p className="text-sm font-body">{service.desc}</p>
           </motion.div>
         ))}
