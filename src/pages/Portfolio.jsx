@@ -17,15 +17,11 @@ const Portfolio = () => {
       video: 'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
     },
     {
-      title: 'Corporate Website for Tech Company',
-      description: 'A corporate site built with React.js and Tailwind CSS, emphasizing usability and performance.',
-      video: 'https://cdn.shopify.com/videos/c/o/v/6b22e41d2a5c4c4b92768ee69f77b0c1.mp4',
+      title: 'Happy client site development',
+      description: 'Developed a fully responsive website using HTML, CSS, and JavaScript, ensuring optimal performance across devices. Implemented clean, maintainable code and intuitive design to enhance usability. Delivered a solution that met the client’s requirements while demonstrating strong front-end development expertise.',
+      video: 'https://cdn.shopify.com/videos/c/o/v/63fe023c0ef74a39a47b14a210f61812.mp4',
     },
-    {
-      title: 'Portfolio Website for Designer',
-      description: 'A minimalist portfolio site for a freelance designer, showcasing work and services in a dynamic layout.',
-      video: 'https://cdn.shopify.com/videos/c/o/v/4a18df7e9b7142e7a28e2c03d51c789e.mp4',
-    }
+    
   ];
 
   return (

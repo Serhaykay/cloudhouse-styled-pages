@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import logoImage from '../assets/images/chlogo.png';
 import profile1 from '../assets/images/profile1.jpg';
 import profile2 from '../assets/images/profile2.jpg'
+import profile3 from '../assets/images/profile3.jpg'
 
 const About = () => {
   return (
@@ -56,7 +57,7 @@ const About = () => {
             transition={{ delay: 0.2 }}
             className="bg-white rounded-xl shadow-lg p-6 text-center"
           >
-            <h3 className="text-xl font-semibold text-[#5B3CC4] mb-4">Innovation</h3>
+            <h3 className="text-xl font-semibold text-emerald-500 mb-4">Innovation</h3>
             <p className="text-sm font-body text-gray-700">
               We thrive on innovation, using cutting-edge technologies to deliver unique solutions that meet the evolving needs of our clients.
             </p>
@@ -68,7 +69,7 @@ const About = () => {
             transition={{ delay: 0.4 }}
             className="bg-white rounded-xl shadow-lg p-6 text-center"
           >
-            <h3 className="text-xl font-semibold text-[#5B3CC4] mb-4">Integrity</h3>
+            <h3 className="text-xl font-semibold text-emerald-500 mb-4">Integrity</h3>
             <p className="text-sm font-body text-gray-700">
               We believe in honesty and transparency. Our clients can trust us to deliver on our promises and provide high-quality solutions every time.
             </p>
@@ -80,7 +81,7 @@ const About = () => {
             transition={{ delay: 0.6 }}
             className="bg-white rounded-xl shadow-lg p-6 text-center"
           >
-            <h3 className="text-xl font-semibold text-[#5B3CC4] mb-4">Collaboration</h3>
+            <h3 className="text-xl font-semibold text-emerald-500 mb-4">Collaboration</h3>
             <p className="text-sm font-body text-gray-700">
               We believe in working closely with our clients to understand their goals and collaborate towards creating the best solution.
             </p>
@@ -89,38 +90,40 @@ const About = () => {
       </section>
 
       {/* Our Team Section */}
+      
       <section className="px-6 py-16">
         <h2 className="text-3xl font-heading text-center font-bold mb-8">Meet Our Team</h2>
         <div className="grid md:grid-cols-3 gap-12">
           <div className="text-center">
             <img
-              src= {profile1}
+              src={profile1}
               alt="Team Member 1"
-              className="w-32 h-32 rounded-full mx-auto mb-4"
+              className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
             />
-            <h3 className="font-semibold text-[#5B3CC4]">Usman A.O</h3>
+            <h3 className="font-semibold text-emerald-500">Usman A.O</h3>
             <p className="text-sm text-gray-700">Developer</p>
           </div>
           <div className="text-center">
             <img
               src={profile2}
               alt="Team Member 2"
-              className="w-32 h-32 rounded-full mx-auto mb-4"
+              className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
             />
-            <h3 className="font-semibold text-[#5B3CC4]">Ralp A.</h3>
+            <h3 className="font-semibold text-emerald-500">Ralp A.</h3>
             <p className="text-sm text-gray-700">Project Manager</p>
           </div>
           <div className="text-center">
             <img
-              src="/path-to-team-member3.jpg"
+              src={profile3}
               alt="Team Member 3"
-              className="w-32 h-32 rounded-full mx-auto mb-4"
+              className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
             />
-            <h3 className="font-semibold text-[#5B3CC4]">Emmy A.O</h3>
+            <h3 className="font-semibold text-emerald-500">Emmy A.O</h3>
             <p className="text-sm text-gray-700">Developer</p>
           </div>
         </div>
       </section>
+
 
       {/* Call to Action Section */}
       <section className="bg-[#1E293B] text-white text-center px-6 py-16">
