@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
 import logoImage from '../assets/images/chlogo.png';
 import profile1 from '../assets/images/profile1.jpg';
-import profile2 from '../assets/images/profile2.jpg'
+import profile2 from '../assets/images/profile4.jpg'
 import profile3 from '../assets/images/profile3.jpg'
-import aboutcloudhouse from "../assets/images/aboutCloudhouse.jpg";
+import aboutcloudhouse from "../assets/images/about-cloudhouse1.jpg";
 
 
 

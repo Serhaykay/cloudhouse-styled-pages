@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-hot-toast';
-import contactcloudhouse from '../assets/images/contact-cloudhouse.jpg'
+import contactcloudhouse from '../assets/images/contact-cloudhouse1.jpg'
 
 const Contact = () => {
   const [formData, setFormData] = useState({

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
-import cloudhousePortfolio from '../assets/images/cloudhouse-portfolio.jpg'
+import cloudhousePortfolio from '../assets/images/cloudhouse-portfolio1.jpg'
 
 const Portfolio = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);

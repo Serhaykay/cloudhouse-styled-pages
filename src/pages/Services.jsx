@@ -8,7 +8,7 @@ import webdevImage from '../assets/images/webdev.png';
 import webcamImage from '../assets/images/webcam.png';
 import cleanImage from '../assets/images/CleanCode.png';
 import CloudhousePackages from '../components/CloudhousePackages'
-import cloudhouseservices from "../assets/images/cloudhouse-services.jpg";
+import cloudhouseservices from "../assets/images/cloudhouse-service.jpg";
 
 const services = [
   {
@@ -168,34 +168,40 @@ const Services = () => {
   return (
     <div className="pt-0 space-y-24 bg-[#F9FAFB] text-[#1E293B]">
       {/* Hero Section */}
-      <section
-        className="relative h-[70vh] bg-cover bg-center text-white flex items-center justify-center"
-        style={{ backgroundImage: `url(${cloudhouseservices})` }}
-      >
-        <div className="absolute inset-0 bg-black/50 z-0" />
-        <div className="relative z-10 text-center px-6 pt-24">
-          <motion.h1
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.1 }}
-            className="text-4xl md:text-5xl font-bold mb-4"
-          >
-            Our Services
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.2 }}
-            className="text-lg md:text-xl mb-8"
-          >
-            <p className="text-lg font-body max-w-2xl mx-auto">
-              Expert solutions in Web Development, Shopify, SEO, and Support to elevate your digital presence.
-            </p>
-          </motion.p>
-                  
-        </div>
-        
-      </section>
+      <section className="relative h-[70vh] text-white flex items-center justify-center overflow-hidden">
+  {/* Background Image */}
+  <img
+    src={cloudhouseservices} 
+    alt="Cloud House Services"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50 z-0" />
+
+  {/* Content */}
+  <div className="relative z-10 text-center px-6 pt-24">
+    <motion.h1
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.1 }}
+      className="text-4xl md:text-5xl font-bold mb-4"
+    >
+      Our Services
+    </motion.h1>
+    <motion.p
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ delay: 0.2 }}
+      className="text-lg md:text-xl mb-8"
+    >
+      <span className="text-lg font-body max-w-2xl mx-auto block">
+        Expert solutions in Web Development, Shopify, SEO, and Support to elevate your digital presence.
+      </span>
+    </motion.p>
+  </div>
+</section>
+
 
       {/* Services Grid */}
       <section className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 px-6 max-w-7xl mx-auto">
