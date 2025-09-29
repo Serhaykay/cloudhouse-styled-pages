@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from 'emailjs-com';
 import { toast } from 'react-hot-toast';
+import contactcloudhouse from '../assets/images/contact-cloudhouse.jpg'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,23 +45,39 @@ const Contact = () => {
   return (
     <div className="pt-0 bg-[#F9FAFB] text-[#1E293B]">
       {/* Header */}
-      <section className="text-center px-6 py-20 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white pt-64">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-          className="text-4xl md:text-5xl font-heading font-bold mb-4"
-        >
-          Contact Us
-        </motion.h1>
-        <p className="text-lg font-body max-w-xl mx-auto">
-          Let’s bring your ideas to life. Reach out and let’s talk.
-        </p>
-      </section>
+      {/* Hero Section */}
+            <section
+              className="relative h-[70vh] bg-cover bg-center text-white flex items-center justify-center"
+              style={{ backgroundImage: `url(${contactcloudhouse})` }}
+            >
+              <div className="absolute inset-0 bg-black/50 z-0" />
+              <div className="relative z-10 text-center px-6 pt-24">
+                <motion.h1
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.1 }}
+                  className="text-4xl md:text-5xl font-bold mb-4"
+                >
+                  Contact Us
+                </motion.h1>
+                <motion.p
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.2 }}
+                  className="text-lg md:text-xl mb-8"
+                >
+                  <p className="text-lg font-body max-w-xl mx-auto">
+                    Let’s bring your ideas to life. Reach out and let’s talk.
+                  </p>
+                </motion.p>
+                        
+              </div>
+              
+            </section>
 
       {/* Contact Form */}
       <section className="max-w-2xl mx-auto p-6 bg-white rounded-xl shadow-md mt-10">
-        <h2 className="text-2xl font-semibold text-[#5B3CC4] mb-6">Send us a message</h2>
+        <h2 className="text-2xl font-semibold text-emerald-500 mb-6">Send us a message</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
             <label className="block text-sm font-medium">Name</label>
@@ -101,7 +118,7 @@ const Contact = () => {
           <button
             type="submit"
             disabled={sending}
-            className="bg-[#5B3CC4] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#4a2eaf] transition"
+            className="bg-emerald-500 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-600 transition"
           >
             {sending ? 'Sending...' : 'Send Message'}
           </button>
