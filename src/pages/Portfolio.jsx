@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
+import cloudhousePortfolio from '../assets/images/cloudhouse-portfolio.jpg'
 
 const Portfolio = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
@@ -27,18 +28,33 @@ const Portfolio = () => {
   return (
     <div className="bg-[#F9FAFB] text-[#1E293B]">
       {/* Hero Section */}
-      <section className="relative pt-64 text-center py-24 px-6 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-heading font-bold mb-4"
-        >
-          Our Portfolio
-        </motion.h1>
-        <p className="text-lg font-body max-w-2xl mx-auto">
-          Explore our work and see how we’ve helped businesses achieve digital excellence.
-        </p>
+      <section
+        className="relative h-[70vh] bg-cover bg-center text-white flex items-center justify-center"
+        style={{ backgroundImage: `url(${cloudhousePortfolio})` }}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0" />
+        <div className="relative z-10 text-center px-6 pt-24">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.1 }}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            Our Portfolio
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl mb-8"
+          >
+            <p className="text-lg font-body max-w-2xl mx-auto">
+              Explore our work and see how we’ve helped businesses achieve digital excellence.
+            </p>
+          </motion.p>
+                  
+        </div>
+        
       </section>
 
       {/* Projects Section */}
@@ -82,7 +98,7 @@ const Portfolio = () => {
 
               {/* Card Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-[#5B3CC4] mb-4">{project.title}</h3>
+                <h3 className="text-xl font-semibold text-emerald-500 mb-4">{project.title}</h3>
                 <p className="text-sm font-body text-gray-700">{project.description}</p>
               </div>
             </motion.div>

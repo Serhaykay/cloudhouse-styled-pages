@@ -5,23 +5,42 @@ import logoImage from '../assets/images/chlogo.png';
 import profile1 from '../assets/images/profile1.jpg';
 import profile2 from '../assets/images/profile2.jpg'
 import profile3 from '../assets/images/profile3.jpg'
+import aboutcloudhouse from "../assets/images/aboutCloudhouse.jpg";
+
+
+
 
 const About = () => {
   return (
     <div className="bg-[#F9FAFB] text-[#1E293B]">
       {/* Hero Section */}
-      <section className="relative text-center pt-64 py-24 px-6 bg-gradient-to-r from-[#5B3CC4] to-[#6B4BCE] text-white">
-        <motion.h1
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-heading font-bold mb-4"
-        >
-          About Cloudhouse
-        </motion.h1>
-        <p className="text-lg font-body max-w-2xl mx-auto">
-          We are a team of passionate developers, designers, and digital experts dedicated to delivering impactful solutions for your online presence.
-        </p>
+      <section
+        className="relative h-[70vh] bg-cover bg-center text-white flex items-center justify-center"
+        style={{ backgroundImage: `url(${aboutcloudhouse})` }}
+      >
+        <div className="absolute inset-0 bg-black/50 z-0" />
+        <div className="relative z-10 text-center px-6 pt-24">
+          <motion.h1
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.1 }}
+            className="text-4xl md:text-5xl font-bold mb-4"
+          >
+            About Cloudhouse
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.2 }}
+            className="text-lg md:text-xl mb-8"
+          >
+            <p className="text-lg font-body max-w-2xl mx-auto">
+              We are a team of passionate developers, designers, and digital experts dedicated to delivering impactful solutions for your online presence.
+            </p>
+          </motion.p>
+                  
+        </div>
+        
       </section>
 
       {/* Our Story Section */}
