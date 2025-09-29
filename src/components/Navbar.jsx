@@ -62,8 +62,8 @@ const Navbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`hover:text-[#5B3CC4] transition-colors ${
-                    location.pathname === link.to ? 'text-[#5B3CC4] font-semibold' : ''
+                  className={`hover:text-emerald-600 transition-colors ${
+                    location.pathname === link.to ? 'text-emerald-600 font-semibold' : ''
                   }`}
                 >
                   {link.name}
@@ -113,8 +113,8 @@ const Navbar = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className={`hover:text-[#5B3CC4] ${
-                    location.pathname === link.to ? 'text-[#5B3CC4] font-semibold' : ''
+                  className={`hover:text-emerald-600 ${
+                    location.pathname === link.to ? 'text-emerald-600 font-semibold' : ''
                   }`}
                 >
                   {link.name}

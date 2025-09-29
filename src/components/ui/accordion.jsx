@@ -32,7 +32,7 @@ const AccordionItem = ({ index, isActive, onToggle, children }) => {
     <div className="border-b border-gray-200">
       <div
         onClick={() => onToggle(index)}
-        className="flex justify-between items-center cursor-pointer py-3 px-4 bg-gray-100 rounded-md hover:bg-gray-200"
+        className="flex justify-between items-center cursor-pointer py-3 px-4 bg-gray-100 rounded-md hover:bg-emerald-600 hover:text-white transition-all"
       >
         <h3 className="text-lg font-semibold">{children.props.question}</h3>
         <span className={`transform transition-transform ${isActive ? 'rotate-180' : ''}`}>
