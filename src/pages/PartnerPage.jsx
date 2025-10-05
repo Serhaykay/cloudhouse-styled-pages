@@ -75,7 +75,7 @@ const PartnerPage = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-[#5B3CC4] mb-6"
+          className="text-4xl md:text-5xl font-bold text-emerald-500 mb-6"
         >
           Partner With Cloudhouse247
         </motion.h1>
@@ -95,7 +95,7 @@ const PartnerPage = () => {
       {/* Why Partner With Us */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-[#5B3CC4] mb-12">
+          <h2 className="text-3xl font-bold text-center text-emerald-500 mb-12">
             Why Partner With Us
           </h2>
           <div className="grid md:grid-cols-4 gap-8">
@@ -117,7 +117,7 @@ const PartnerPage = () => {
       {/* How It Works */}
       <section className="bg-gray-50 py-16">
         <div className="max-w-5xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-[#5B3CC4] mb-12">
+          <h2 className="text-3xl font-bold text-center text-emerald-500 mb-12">
             How It Works
           </h2>
           <div className="grid md:grid-cols-4 gap-8 text-center">
@@ -141,7 +141,7 @@ const PartnerPage = () => {
       {/* Testimonials */}
       <section className="bg-white py-16">
         <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold text-center text-[#5B3CC4] mb-12">
+          <h2 className="text-3xl font-bold text-center text-emerald-500 mb-12">
             What Our Partners Say
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -175,7 +175,7 @@ const PartnerPage = () => {
       <section className="max-w-6xl mx-auto px-6 py-16 grid md:grid-cols-2 gap-12">
         {/* Left Info */}
         <div>
-          <h2 className="text-3xl font-bold text-[#5B3CC4] mb-6">Frequently Asked Questions</h2>
+          <h2 className="text-3xl font-bold text-emerald-500 mb-6">Frequently Asked Questions</h2>
           <p className="text-gray-600 mb-6">
             We’ve gathered the most common questions to help you get started quickly.
           </p>
