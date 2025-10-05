@@ -37,16 +37,16 @@ const App = () => {
         <div className="font-poppins">
           <Navbar />
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/portfolio" element={<Portfolio />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route path="/terms-of-service" element={<TermsOfService />} />
-            <Route path="/PartnerPage" element={<PartnerPage />} />
+            <Route exact path="/" element={<Home />} />
+            <Route exact path="/services" element={<Services />} />
+            <Route exact path="/about" element={<About />} />
+            <Route exact path="/portfolio" element={<Portfolio />} />
+            <Route exact path="/contact" element={<Contact />} />
+            <Route exact path="/blog" element={<Blog />} />
+            <Route exact path="/blog/:slug" element={<BlogPost />} />
+            <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
+            <Route exact path="/terms-of-service" element={<TermsOfService />} />
+            <Route exact path="/PartnerPage" element={<PartnerPage />} />
           </Routes>
           <WhatsAppButton />
           <NewsletterPopup />
