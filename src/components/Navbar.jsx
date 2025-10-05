@@ -125,7 +125,7 @@ const Navbar = () => {
               <Link
                 to="/partnerpage"
                 onClick={() => setIsOpen(false)}
-                className="mt-6 px-6 py-3 rounded-xl bg-[#5B3CC4] text-white font-semibold text-center shadow-lg hover:bg-[#4529a1] transition-all"
+                className="mt-6 px-6 py-3 rounded-xl bg-emerald-500 text-white font-semibold text-center shadow-lg hover:bg-emerald-600 transition-all"
               >
                 Become a Partner
               </Link>
