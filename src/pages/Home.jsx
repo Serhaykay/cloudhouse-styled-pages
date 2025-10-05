@@ -63,13 +63,13 @@ const PartnerLogos = () => {
     autoplaySpeed: 0,
     speed: 8000,
     cssEase: "linear",
-    slidesToShow: 6,
+    slidesToShow: 4,
     slidesToScroll: 1,
     arrows: false,
     pauseOnHover: false,
     responsive: [
       { breakpoint: 1024, settings: { slidesToShow: 4 } },
-      { breakpoint: 768, settings: { slidesToShow: 3 } },
+      { breakpoint: 768, settings: { slidesToShow: 4 } },
       { breakpoint: 480, settings: { slidesToShow: 2 } },
     ],
   };
@@ -90,7 +90,7 @@ const PartnerLogos = () => {
               <img
                 src={logo}
                 alt={`Partner ${i}`}
-                className="h-16 auto object-contain"
+                className="h-16 w-auto object-contain"
               />
             </div>
           ))}
