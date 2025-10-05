@@ -1,5 +1,5 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import Home from './pages/Home';
 import Services from './pages/Services';
 import About from './pages/About';
@@ -15,11 +15,25 @@ import WhatsAppButton from './components/WhatsAppButton.jsx';
 import PartnerPage from './pages/PartnerPage.jsx';
 import NewsletterPopup from './components/NewsletterPopup';
 
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth', // you can change to 'auto' if you don’t want smooth scrolling
+    });
+  }, [pathname]);
+
+  return null;
+};
+
 const App = () => {
   return (
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <Router>
+        <ScrollToTop />
         <div className="font-poppins">
           <Navbar />
           <Routes>
