@@ -263,15 +263,18 @@ const Services = () => {
       </section>
 
       {/* Call to Action Section */}
-      <section className="bg-[#1E293B] text-white text-center px-6 py-16">
-        <h2 className="text-3xl font-heading font-bold mb-4">Let’s Build Together</h2>
-        <p className="text-lg font-body mb-8">Have a custom project in mind? Let’s craft a solution just for you.</p>
-        <Link
-          to="/contact"
-          className="bg-[#10B981] text-white px-6 py-3 rounded-xl font-semibold hover:bg-[#0f766e] transition"
-        >
-          Request a Free Quote
-        </Link>
+      <section className="bg-[#1E293B] text-white px-6 py-16">
+        <div className=' text-center'>
+          <h2 className="text-3xl font-heading font-bold mb-4">Let’s Build Together</h2>
+          <p className="text-lg font-body mb-8">Have a custom project in mind? Let’s craft a solution just for you.</p>
+          <Link
+            to="/contact"
+            className="bg-[#10B981] text-white px-6 py-3 text-center rounded-xl font-semibold hover:bg-[#0f766e] transition"
+          >
+            Request a Free Quote
+          </Link>
+
+        </div>
       {/* Footer */}
       <Footer />
       </section>
