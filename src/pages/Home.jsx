@@ -38,6 +38,7 @@ import Shopifytheme from "../assets/images/Shopifytheme.jpg";
 import appdev from "../assets/images/appdev.jpg";
 
 
+
 // Add new faqs array
 const faqs = [
   {
@@ -656,47 +657,107 @@ const Home = () => {
 </section>
 
 {/* Testimonials Section */}
-<section className="bg-[#F3F4F6] px-6 py-16">
+<section className="bg-[#F3F4F6] px-6 py-16 relative">
   <h2 className="text-3xl font-heading text-center font-bold mb-10">
     Client Testimonials
   </h2>
+  <p className="text-lg mb-8 text-center">1,000s of Happy Customers don’t just take our word for it, see what our customers have to say</p>
 
-  {(() => {
-    const [showAll, setShowAll] = React.useState(false);
-    const visibleTestimonials = showAll ? testimonials : testimonials.slice(0, 4);
+  <div className="max-w-5xl mx-auto relative">
+    <Swiper
+      spaceBetween={24}
+      slidesPerView={1}
+      loop={true}
+      autoplay={{
+        delay: 4000,
+        disableOnInteraction: false,
+      }}
+      navigation={{
+        nextEl: ".swiper-button-next-custom",
+        prevEl: ".swiper-button-prev-custom",
+      }}
+      breakpoints={{
+        768: { slidesPerView: 2 },
+      }}
+      modules={[Autoplay, Navigation]}
+      className="pb-12"
+    >
+      {testimonials.map((testi, i) => (
+        <SwiperSlide key={i}>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: i * 0.1 }}
+            className="bg-white rounded-xl shadow-lg p-8 border border-gray-200 h-full flex flex-col justify-between min-h-[320px]"
+          >
+            {/* Stars */}
+            <div className="flex justify-center mb-4 text-emerald-500">
+              {[...Array(5)].map((_, index) => (
+                <svg
+                  key={index}
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                  className="w-5 h-5"
+                >
+                  <path d="M12 .587l3.668 7.568L24 9.748l-6 5.857 1.417 8.26L12 19.771 4.583 23.865 6 15.605 0 9.748l8.332-1.593z" />
+                </svg>
+              ))}
+            </div>
 
-    return (
-      <>
-        <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {visibleTestimonials.map((testi, i) => (
-            <motion.div
-              key={i}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="bg-white rounded-xl shadow-lg p-6 border border-gray-200"
-            >
-              <p className="italic mb-4">"{testi.quote}"</p>
-              <p className="font-semibold text-emerald-600">- {testi.name}</p>
-            </motion.div>
-          ))}
-        </div>
+            {/* Quote */}
+            <p className="italic text-slate-700 mb-6 text-center flex-grow">
+              "{testi.quote}"
+            </p>
 
-        {testimonials.length > 4 && (
-          <div className="text-center mt-10">
-            <button
-              onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-lg hover:bg-emerald-600 transition"
-            >
-              {showAll ? "View Less" : "View More"}
-            </button>
-          </div>
-        )}
-      </>
-    );
-  })()}
+            {/* Name */}
+            <p className="font-semibold text-emerald-600 text-center">
+              - {testi.name}
+            </p>
+          </motion.div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+    {/* Custom Navigation Arrows */}
+    <button
+      className="swiper-button-prev-custom absolute left-[-2.5rem] top-1/2 -translate-y-1/2 cursor-pointer text-emerald-500 hover:text-emerald-600 transition-colors z-10"
+      aria-label="Previous testimonial"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+      </svg>
+    </button>
+
+    <button
+      className="swiper-button-next-custom absolute right-[-2.5rem] top-1/2 -translate-y-1/2 cursor-pointer text-emerald-500 hover:text-emerald-600 transition-colors z-10"
+      aria-label="Next testimonial"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="none"
+        viewBox="0 0 24 24"
+        strokeWidth="2"
+        stroke="currentColor"
+        className="w-6 h-6"
+      >
+        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+      </svg>
+    </button>
+  </div>
 </section>
+
+
+
+
 
 {/* FAQ Accordion Section */}
   <section className="max-w-4xl mx-auto my-4 px-6 py-12">

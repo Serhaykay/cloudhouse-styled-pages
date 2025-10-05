@@ -7,9 +7,9 @@ const WhatsAppButton = () => {
 
   // Replace with your numbers (international format, no + or spaces)
   const numbers = [
-    { phone: "2348102956759", label: "Emmy" },
+    // { phone: "2348102956759", label: "Emmy" },
     { phone: "2348098765432", label: "Raph" },
-    { phone: "2347034236272", label: "Usman" },
+    // { phone: "2347034236272", label: "Usman" },
   ];
 
   return (
