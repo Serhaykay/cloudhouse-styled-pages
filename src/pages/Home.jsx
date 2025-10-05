@@ -512,7 +512,7 @@ const Home = () => {
 </section>
 
 {/* Testimonials Section */}
-<section className="bg-[#F3F4F6] px-6 py-16 relative">
+<section className="bg-[#F3F4F6] px-6 py-16 mx-auto relative">
   <h2 className="text-3xl font-heading text-center font-bold mb-10">
     Client Testimonials
   </h2>
@@ -576,7 +576,7 @@ const Home = () => {
     </Swiper>
 
     {/* Custom Navigation Arrows */}
-    <button
+    {/* <button
       className="swiper-button-prev-custom absolute left-[-2.5rem] top-1/2 -translate-y-1/2 cursor-pointer text-emerald-500 hover:text-emerald-600 transition-colors z-10"
       aria-label="Previous testimonial"
     >
@@ -590,8 +590,8 @@ const Home = () => {
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
       </svg>
-    </button>
-
+    </button> */}
+{/* 
     <button
       className="swiper-button-next-custom absolute right-[-2.5rem] top-1/2 -translate-y-1/2 cursor-pointer text-emerald-500 hover:text-emerald-600 transition-colors z-10"
       aria-label="Next testimonial"
@@ -606,7 +606,7 @@ const Home = () => {
       >
         <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
       </svg>
-    </button>
+    </button> */}
   </div>
 </section>
 
