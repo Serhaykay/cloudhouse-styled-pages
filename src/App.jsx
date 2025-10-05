@@ -14,6 +14,7 @@ import TermsOfService from './pages/TermsOfService.jsx';
 import WhatsAppButton from './components/WhatsAppButton.jsx';
 import PartnerPage from './pages/PartnerPage.jsx';
 import NewsletterPopup from './components/NewsletterPopup';
+import { NotFoundPage } from './pages/NotFoundPage.jsx';
 
 const ScrollToTop = () => {
   const { pathname } = useLocation();
@@ -33,24 +34,29 @@ const App = () => {
     <>
       <Toaster position="top-center" reverseOrder={false} />
       <Router>
-        <ScrollToTop />
-        <div className="font-poppins">
-          <Navbar />
-          <Routes>
-            <Route exact path="/" element={<Home />} />
-            <Route exact path="/services" element={<Services />} />
-            <Route exact path="/about" element={<About />} />
-            <Route exact path="/portfolio" element={<Portfolio />} />
-            <Route exact path="/contact" element={<Contact />} />
-            <Route exact path="/blog" element={<Blog />} />
-            <Route exact path="/blog/:slug" element={<BlogPost />} />
-            <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
-            <Route exact path="/terms-of-service" element={<TermsOfService />} />
-            <Route exact path="/PartnerPage" element={<PartnerPage />} />
-          </Routes>
-          <WhatsAppButton />
-          <NewsletterPopup />
-        </div>
+        {/* <Switch> */}
+          <ScrollToTop />
+          <div className="font-poppins">
+            <Navbar />
+            <Routes>
+              <Route exact path="/" element={<Home />} />
+              <Route exact path="/services" element={<Services />} />
+              <Route exact path="/about" element={<About />} />
+              <Route exact path="/portfolio" element={<Portfolio />} />
+              <Route exact path="/contact" element={<Contact />} />
+              <Route exact path="/blog" element={<Blog />} />
+              <Route exact path="/blog/:slug" element={<BlogPost />} />
+              <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
+              <Route exact path="/terms-of-service" element={<TermsOfService />} />
+              <Route exact path="/PartnerPage" element={<PartnerPage />} />
+              {/* <Route path='/404' element={<NotFoundPage />} /> */}
+              {/* <Redirect from="*" to="/404" /> */}
+            </Routes>
+            <WhatsAppButton />
+            <NewsletterPopup />
+          </div>
+
+        {/* </Switch> */}
       </Router>
     </>
   );
