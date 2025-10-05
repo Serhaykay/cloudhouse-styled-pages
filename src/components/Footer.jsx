@@ -127,7 +127,7 @@ const Footer = () => {
             </li>
             <li>
               <p className="hover:text-[#10B981]">
-                123 Cloudhouse Ave, Suite 101
+                9450 Southwest Gemini Drive, Beaverton, OR, 97008, USA
               </p>
             </li>
             <li>
@@ -212,7 +212,7 @@ const Footer = () => {
 
       {/* Legal Links */}
       <div className="mt-12 text-center text-sm">
-        <p>&copy; 2025 Cloudhouse. All rights reserved.</p>
+        <p>&copy; 2025 Cloudhouse247. All rights reserved.</p>
         <ul className="mt-4 space-x-6 flex justify-center">
           <li>
             <Link to="/privacy-policy" className="hover:text-[#10B981]">

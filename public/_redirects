@@ -1,9 +1,0 @@
-# Redirects from what the browser requests to what we serve
-/
-/services   /blog/my-post
-/about                /blog
-/portfolio              https://cloudhouse-weld.vercel.app
-/PartnerPage
-/terms-of-service
-/privacy-policy
-/contact
