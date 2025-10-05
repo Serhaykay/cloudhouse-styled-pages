@@ -98,7 +98,7 @@ const BlogPost = () => {
   return (
     <div className="font-[Poppins] max-w-4xl mx-auto px-4 py-20 pt-64">
       {/* Post Content */}
-      <h1 className="text-4xl font-bold text-[#5B3CC4] mb-4">{post.title}</h1>
+      <h1 className="text-4xl font-bold text-emerald-500 mb-4">{post.title}</h1>
       <p className="text-sm text-gray-500 mb-6">
         {new Date(post.publishedAt).toDateString()}
       </p>
@@ -115,7 +115,7 @@ const BlogPost = () => {
 
       {/* Comments Section */}
       <div className="mt-12">
-        <h2 className="text-2xl font-semibold text-[#5B3CC4] mb-6">Comments</h2>
+        <h2 className="text-2xl font-semibold text-emerald-500 mb-6">Comments</h2>
         {comments.length > 0 ? (
           <ul className="space-y-4">
             {comments.map((comment) => (
@@ -133,7 +133,7 @@ const BlogPost = () => {
 
       {/* Comment Form */}
       <div className="mt-12">
-        <h3 className="text-xl font-semibold text-[#5B3CC4] mb-4">Leave a Comment</h3>
+        <h3 className="text-xl font-semibold text-emerald-500 mb-4">Leave a Comment</h3>
         <form className="space-y-4" onSubmit={handleCommentSubmit}>
           <div>
             <label htmlFor="name" className="block text-sm text-gray-600">Name</label>
@@ -159,7 +159,7 @@ const BlogPost = () => {
           </div>
           <button
             type="submit"
-            className="bg-[#5B3CC4] text-white px-6 py-3 rounded-lg"
+            className="bg-emerald-500 text-white px-6 py-3 rounded-lg"
           >
             Submit Comment
           </button>

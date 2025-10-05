@@ -11,7 +11,7 @@ const TermsOfService = () => {
     <main className="min-h-screen bg-gray-50 text-slate-800 font-sans pt-16">
       <div className="max-w-4xl mx-auto py-16 px-6">
         <header className="mb-8">
-          <Link to="/" className="inline-block mb-4 text-[#5B3CC4] font-semibold">
+          <Link to="/" className="inline-block mb-4 text-emerald-500 font-semibold">
             ← Back to home
           </Link>
 

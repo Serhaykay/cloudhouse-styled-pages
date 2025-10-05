@@ -282,7 +282,7 @@ const Home = () => {
             transition={{ duration: 0.1 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            Welcome to Cloudhouze247
+            Welcome to Cloudhouse247
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -386,7 +386,7 @@ const Home = () => {
 {/* === Features Section with Slideshow (your original design kept) === */}
 <section className="bg-slate-800 text-white py-16 px-6">
   <h2 className="text-3xl font-bold text-center mb-10">
-    Why Choose Cloudhouze247?
+    Why Choose Cloudhouse247?
   </h2>
 
   {/* Desktop Grid */}

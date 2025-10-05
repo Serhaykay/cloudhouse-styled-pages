@@ -15,7 +15,7 @@ const PrivacyPolicy = () => {
   const lastUpdated = 'September 14, 2025';
   const companyName = 'Cloudhouse';
   const contactEmail = 'cloudhouse.info24@gmail.com';
-  const brandColor = 'text-[#5B3CC4]';
+  const brandColor = 'text-emerald-600';
 
   const handlePrint = () => {
     window.print();
@@ -42,7 +42,7 @@ const PrivacyPolicy = () => {
             </button>
             <a
               href={`mailto:${contactEmail}`}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#5B3CC4] text-white text-sm shadow-sm hover:opacity-95"
+              className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-emerald-500 text-white text-sm shadow-sm hover:bg-emerald-600"
             >
               ✉️ Contact Us
             </a>

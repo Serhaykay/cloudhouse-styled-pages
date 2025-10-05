@@ -53,7 +53,7 @@ const Blog = () => {
 
   return (
     <div className="font-[Poppins] max-w-7xl mx-auto px-4 py-20">
-      <h1 className="text-4xl font-bold text-[#5B3CC4] mb-12 text-center">Our Blog</h1>
+      <h1 className="text-4xl font-bold text-emerald-500 mb-12 text-center">Our Blog</h1>
       
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {posts.map((post) => (
@@ -69,7 +69,7 @@ const Blog = () => {
               />
             )}
             <div className="p-6 flex flex-col flex-grow">
-              <h2 className="text-2xl font-semibold text-[#5B3CC4] mb-2">
+              <h2 className="text-2xl font-semibold text-emerald-500 mb-2">
                 <Link to={`/blog/${post.slug.current}`}>{post.title}</Link>
               </h2>
               <p className="text-sm text-gray-500 mb-4">
@@ -81,7 +81,7 @@ const Blog = () => {
               </div>
               <Link
                 to={`/blog/${post.slug.current}`}
-                className="mt-4 text-[#5B3CC4] font-medium hover:underline"
+                className="mt-4 text-emerald-500 font-medium hover:underline"
               >
                 Read more →
               </Link>

@@ -26,7 +26,7 @@ const About = () => {
             transition={{ duration: 0.1 }}
             className="text-4xl md:text-5xl font-bold mb-4"
           >
-            About Cloudhouse
+            About Cloudhouse247
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 10 }}
@@ -49,7 +49,7 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12">
           <div className="text-lg font-body text-gray-700">
             <p>
-              At Cloudhouse, we believe in transforming ideas into reality. From custom web development to tailored eCommerce solutions, we work hand-in-hand with our clients to help them achieve their goals.
+              At Cloudhouse247, we believe in transforming ideas into reality. From custom web development to tailored eCommerce solutions, we work hand-in-hand with our clients to help them achieve their goals.
             </p>
             <p className="mt-6">
               We started as a small team of developers and designers with a shared vision: to make powerful and user-friendly web experiences accessible to everyone. Today, we work with a diverse range of businesses to create impactful digital solutions.

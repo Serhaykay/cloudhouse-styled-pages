@@ -215,7 +215,7 @@ const PartnerPage = () => {
         id="partner-form"
         className="bg-white shadow-lg rounded-2xl max-w-3xl mx-auto p-10 mb-20"
       >
-        <h2 className="text-3xl font-bold text-center text-[#5B3CC4] mb-6">
+        <h2 className="text-3xl font-bold text-center text-emerald-500 mb-6">
           Get In Touch
         </h2>
         <p className="text-center text-gray-600 mb-8">
