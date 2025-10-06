@@ -117,14 +117,14 @@ const Footer = () => {
                 href="mailto:info@cloudhouse.com"
                 className="hover:text-[#10B981]"
               >
-                cloudhouse.info24@gmail.com
+                support@cloudhouse247.com
               </a>
             </li>
-            <li>
+            {/* <li>
               <a href="tel:+1234567890" className="hover:text-[#10B981]">
                 +1 (234) 567-890
               </a>
-            </li>
+            </li> */}
             <li>
               <p className="hover:text-[#10B981]">
                 9450 Southwest Gemini Drive, Beaverton, OR, 97008, USA
