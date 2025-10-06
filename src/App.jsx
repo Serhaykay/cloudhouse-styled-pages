@@ -44,7 +44,7 @@ const App = () => {
               <Route exact path="/about" element={<About />} />
               <Route exact path="/portfolio" element={<Portfolio />} />
               <Route exact path="/contact" element={<Contact />} />
-              <Route exact path="/blog" element={<Blog />} />
+              {/* <Route exact path="/blog" element={<Blog />} /> */}
               <Route exact path="/blog/:slug" element={<BlogPost />} />
               <Route exact path="/privacy-policy" element={<PrivacyPolicy />} />
               <Route exact path="/terms-of-service" element={<TermsOfService />} />

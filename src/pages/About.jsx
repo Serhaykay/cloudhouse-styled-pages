@@ -128,7 +128,7 @@ const About = () => {
               alt="Team Member 2"
               className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
             />
-            <h3 className="font-semibold text-emerald-500">Ralp A.</h3>
+            <h3 className="font-semibold text-emerald-500">Raph A.</h3>
             <p className="text-sm text-gray-700">Project Manager</p>
           </div>
           <div className="text-center">

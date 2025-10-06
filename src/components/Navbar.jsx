@@ -14,7 +14,7 @@ const Navbar = () => {
     { name: 'About', to: '/about' },
     { name: 'Portfolio', to: '/portfolio' },
     { name: 'Contact', to: '/contact' },
-    { name: 'Blog', to: '/blog' },
+    // { name: 'Blog', to: '/blog' },
   ];
 
   // Detect scroll direction
