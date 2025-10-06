@@ -60,6 +60,8 @@ const About = () => {
               src={logoImage}
               alt="Our Story"
               className="w-full h-full object-cover rounded-xl shadow-lg"
+              draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
             />
           </div>
         </div>
@@ -119,6 +121,7 @@ const About = () => {
               alt="Team Member 1"
               className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
               draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
             />
             <h3 className="font-semibold text-emerald-500">Usman A.O</h3>
             <p className="text-sm text-gray-700">Developer</p>
@@ -129,6 +132,7 @@ const About = () => {
               alt="Team Member 2"
               className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
               draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
             />
             <h3 className="font-semibold text-emerald-500">Raph A.</h3>
             <p className="text-sm text-gray-700">Project Manager</p>
@@ -139,6 +143,7 @@ const About = () => {
               alt="Team Member 3"
               className="w-32 h-32 rounded-full mx-auto mb-4 shadow-lg shadow-emerald-500/50"
               draggable="false"
+              onContextMenu={(e) => e.preventDefault()}
             />
             <h3 className="font-semibold text-emerald-500">Emmy A.O</h3>
             <p className="text-sm text-gray-700">Developer</p>

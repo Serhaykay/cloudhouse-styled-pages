@@ -53,7 +53,7 @@ const Navbar = () => {
         >
           <div className="flex justify-between items-center px-4 py-3 md:py-4">
             <Link to="/">
-              <img src={logo} alt="Cloudhouse" className="h-16 md:h-20 w-auto" />
+              <img src={logo} alt="Cloudhouse" className="h-16 md:h-20 w-auto" onContextMenu={(e) => e.preventDefault()} draggable="false" />
             </Link>
 
             {/* Desktop Links */}

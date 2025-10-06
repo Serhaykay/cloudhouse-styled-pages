@@ -12,9 +12,9 @@ import { Link } from 'react-router-dom';
  */
 
 const PrivacyPolicy = () => {
-  const lastUpdated = 'September 14, 2025';
-  const companyName = 'Cloudhouse';
-  const contactEmail = 'cloudhouse.info24@gmail.com';
+  const lastUpdated = 'October 06, 2025';
+  const companyName = 'Cloudhouse247';
+  const contactEmail = 'support@cloudhouse247.com';
   const brandColor = 'text-emerald-600';
 
   const handlePrint = () => {
