@@ -117,7 +117,7 @@ const Footer = () => {
                 href="mailto:info@cloudhouse.com"
                 className="hover:text-[#10B981]"
               >
-                info@cloudhouse.com
+                cloudhouse.info24@gmail.com
               </a>
             </li>
             <li>
