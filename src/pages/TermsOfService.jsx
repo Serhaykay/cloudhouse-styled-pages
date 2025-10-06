@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom';
 
 const TermsOfService = () => {
   const lastUpdated = 'September 14, 2025';
-  const companyName = 'Cloudhouse';
-  const contactEmail = 'cloudhouse.info24@gmail.com';
+  const companyName = 'Cloudhouse247';
+  const contactEmail = 'support@cloudhouse247.com';
 
   return (
     <main className="min-h-screen bg-gray-50 text-slate-800 font-sans pt-16">
