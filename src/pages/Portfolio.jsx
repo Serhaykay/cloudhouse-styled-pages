@@ -19,7 +19,7 @@ const Portfolio = () => {
     {
       title: 'Synthesia website clone',
       description:
-        'A Synthesia-inspired website clone with HTML, CSS, and JavaScript, highlighting front-end development, layout design, and DOM interactivity.',
+        'A Synthesia-inspired website clone with HTML, CSS, and JavaScript, highlighting frontend development, layout design, and DOM interactivity.',
       video:
         'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
       thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/synthesia.png?v=1760000224',
