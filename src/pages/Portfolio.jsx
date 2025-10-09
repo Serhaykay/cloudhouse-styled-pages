@@ -1,29 +1,53 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Footer from '../components/Footer';
-import cloudhousePortfolio from '../assets/images/cloudhouse-portfolio1.jpg'
+import cloudhousePortfolio from '../assets/images/cloudhouse-portfolio1.jpg';
 
 const Portfolio = () => {
   const [selectedVideo, setSelectedVideo] = useState(null);
+  const modalRef = useRef(null);
 
   const projects = [
     {
       title: 'E-commerce Website for Fashion Brand',
-      description: 'A fully responsive react based project with custom features, fetching data using GraphQL and seamless user experience.',
-      video: 'https://cdn.shopify.com/videos/c/o/v/9b927f8c0ee746e79b240b7e8989f5b6.mp4',
+      description:
+        'A fully responsive react based project with custom features, fetching data using GraphQL and seamless user experience.',
+      video:
+        'https://cdn.shopify.com/videos/c/o/v/9b927f8c0ee746e79b240b7e8989f5b6.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/ecommerce-brand.png?v=1759999893',
     },
     {
       title: 'Synthesia website clone',
-      description: 'A Synthesia-inspired website clone with HTML, CSS, and JavaScript, highlighting front-end development, layout design, and DOM interactivity',
-      video: 'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
+      description:
+        'A Synthesia-inspired website clone with HTML, CSS, and JavaScript, highlighting front-end development, layout design, and DOM interactivity.',
+      video:
+        'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/synthesia.png?v=1760000224',
     },
     {
       title: 'Happy client site development',
-      description: 'Developed a fully responsive website using HTML, CSS, and JavaScript, ensuring optimal performance across devices. Implemented clean, maintainable code and intuitive design to enhance usability. Delivered a solution that met the client’s requirements while demonstrating strong front-end development expertise.',
-      video: 'https://cdn.shopify.com/videos/c/o/v/63fe023c0ef74a39a47b14a210f61812.mp4',
+      description:
+        'Developed a fully responsive website using HTML, CSS, and JavaScript, ensuring optimal performance across devices. Implemented clean, maintainable code and intuitive design to enhance usability. Delivered a solution that met the client’s requirements while demonstrating strong front-end development expertise.',
+      video:
+        'https://cdn.shopify.com/videos/c/o/v/63fe023c0ef74a39a47b14a210f61812.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/happy-client-site.png?v=1760000452',
     },
-    
   ];
+
+  // Close modal when clicking outside video area
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (modalRef.current && !modalRef.current.contains(e.target)) {
+        setSelectedVideo(null);
+      }
+    };
+    if (selectedVideo) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [selectedVideo]);
 
   return (
     <div className="bg-[#F9FAFB] text-[#1E293B]">
@@ -52,14 +76,14 @@ const Portfolio = () => {
               Explore our work and see how we’ve helped businesses achieve digital excellence.
             </p>
           </motion.p>
-                  
         </div>
-        
       </section>
 
       {/* Projects Section */}
       <section className="px-6 py-16 max-w-7xl mx-auto">
-        <h2 className="text-3xl font-heading text-center font-bold mb-8">Featured Projects</h2>
+        <h2 className="text-3xl font-heading text-center font-bold mb-8">
+          Featured Projects
+        </h2>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-12">
           {projects.map((project, i) => (
             <motion.div
@@ -71,12 +95,11 @@ const Portfolio = () => {
               className="bg-white rounded-xl shadow-lg overflow-hidden cursor-pointer group relative"
               onClick={() => setSelectedVideo(project.video)}
             >
-              {/* Video Thumbnail */}
-              <video
-                src={project.video}
+              {/* Thumbnail Image */}
+              <img
+                src={project.thumbnail}
+                alt={project.title}
                 className="w-full h-56 object-cover"
-                muted
-                playsInline
               />
 
               {/* Overlay with animation */}
@@ -98,8 +121,12 @@ const Portfolio = () => {
 
               {/* Card Content */}
               <div className="p-6">
-                <h3 className="text-xl font-semibold text-emerald-500 mb-4">{project.title}</h3>
-                <p className="text-sm font-body text-gray-700">{project.description}</p>
+                <h3 className="text-xl font-semibold text-emerald-500 mb-4">
+                  {project.title}
+                </h3>
+                <p className="text-sm font-body text-gray-700">
+                  {project.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -117,7 +144,7 @@ const Portfolio = () => {
             &times;
           </button>
 
-          <div className="relative w-full max-w-5xl">
+          <div ref={modalRef} className="relative w-full max-w-5xl">
             <video
               src={selectedVideo}
               controls
@@ -130,7 +157,9 @@ const Portfolio = () => {
 
       {/* Call to Action Section */}
       <section className="bg-[#1E293B] text-white text-center px-6 py-16">
-        <h2 className="text-3xl font-heading font-bold mb-4">Ready to Create Something Amazing?</h2>
+        <h2 className="text-3xl font-heading font-bold mb-4">
+          Ready to Create Something Amazing?
+        </h2>
         <p className="text-lg font-body mb-8">
           Interested in working with us? Let’s discuss your project and bring your ideas to life!
         </p>
@@ -142,7 +171,6 @@ const Portfolio = () => {
         </a>
       </section>
 
-      {/* Footer */}
       <Footer />
     </div>
   );
