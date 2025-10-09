@@ -62,8 +62,8 @@ const Navbar = () => {
                 <Link
                   key={link.to}
                   to={link.to}
-                  className={`hover:text-[#5B3CC4] transition-colors ${
-                    location.pathname === link.to ? 'text-[#5B3CC4] font-semibold' : ''
+                  className={`hover:text-emerald-600 transition-colors ${
+                    location.pathname === link.to ? 'text-emerald-600 font-semibold' : ''
                   }`}
                 >
                   {link.name}
@@ -113,8 +113,8 @@ const Navbar = () => {
                   key={link.to}
                   to={link.to}
                   onClick={() => setIsOpen(false)}
-                  className={`hover:text-[#5B3CC4] ${
-                    location.pathname === link.to ? 'text-[#5B3CC4] font-semibold' : ''
+                  className={`hover:text-emerald-600 ${
+                    location.pathname === link.to ? 'text-emerald-600 font-semibold' : ''
                   }`}
                 >
                   {link.name}
@@ -125,7 +125,7 @@ const Navbar = () => {
               <Link
                 to="/partnerpage"
                 onClick={() => setIsOpen(false)}
-                className="mt-6 px-6 py-3 rounded-xl bg-[#5B3CC4] text-white font-semibold text-center shadow-lg hover:bg-[#4529a1] transition-all"
+                className="mt-6 px-6 py-3 rounded-xl bg-emerald-600 text-white font-semibold text-center shadow-lg hover:bg-[#4529a1] transition-all"
               >
                 Become a Partner
               </Link>

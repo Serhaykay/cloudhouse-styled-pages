@@ -134,7 +134,11 @@ const Packages = () => {
                         className="flex items-start text-gray-700 text-sm"
                       >
                         <svg
+<<<<<<< HEAD
                           className="w-4 h-4 text-green-500 mr-2 flex-shrink-0 mt-0.5"
+=======
+                          className="w-4 h-4 text-emerald-500 mr-2 flex-shrink-0 mt-0.5"
+>>>>>>> origin/Worked-on-by-Emmy
                           fill="none"
                           stroke="currentColor"
                           strokeWidth="2"

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import Accordion from '@/components/ui/accordion';
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -35,6 +36,76 @@ import cleancodeImage from "../assets/images/CleanCode.png";
 import stockimages from "../assets/images/stockimages.jpg";
 import Shopifytheme from "../assets/images/Shopifytheme.jpg";
 import appdev from "../assets/images/appdev.jpg";
+
+
+// Add new faqs array
+const faqs = [
+  {
+    question: "Why choose Cloudhouse247?",
+    answer: (
+      <div className="space-y-3">
+        <p>
+          <strong>1. 5+ years of Industry Expertise:</strong> We’ve gained deep
+          insights and hands-on experience in delivering high-quality solutions
+          tailored to our clients' unique needs. Our proven track record
+          reflects our commitment to excellence and continuous growth in a
+          competitive digital landscape.
+        </p>
+        <p>
+          <strong>2. 150+ Successful Projects Delivered:</strong> We’ve worked
+          with businesses of all sizes to help them grow and succeed through
+          expert Shopify solutions.
+        </p>
+        <p>
+          <strong>3. Serving Clients in 27+ Countries:</strong> Businesses
+          around the world trust us to deliver custom Shopify solutions tailored
+          to a wide range of markets and industries.
+        </p>
+      </div>
+    ),
+  },
+  {
+    question: "Who Can Join Our Partner Program?",
+    answer: (
+      <p>
+        Anyone! No coding or tech background required. If you know someone who
+        needs help building or growing an online store, web development, SEO,
+        and page optimization you can partner with us. Whether you're a business
+        owner or individual, simply connect us to someone seeking eCommerce or
+        marketing services—there's an opportunity for you.
+      </p>
+    ),
+  },
+  {
+    question: "How can I become a partner?",
+    answer: (
+      <p>
+        You only need to register with us as a partner{" "}
+        <Link to="/contact" className="text-indigo-300 underline">
+          here
+        </Link>
+        .
+      </p>
+    ),
+  },
+  {
+    question: "How much would you pay for each project we do together?",
+    answer:
+      "It depends on the amount of the project, but our commission ranges from 20% to 30%.",
+  },
+  {
+    question: "Do I need to do anything?",
+    answer: "No, our team does all the heavy lifting.",
+  },
+  {
+    question: "Do you pay me instantly?",
+    answer:
+      "You will receive your payment 30 days after the client officially starts working with us.",
+  },
+];
+
+
+
 
 const testimonials = [
   {
@@ -409,7 +480,7 @@ const Home = () => {
                 alt={item.title}
                 className="w-full h-48 object-cover rounded-xl mb-4"
               />
-              <h3 className="text-xl font-semibold text-indigo-600 mb-2">
+              <h3 className="text-xl font-semibold text-green-600 mb-2">
                 {item.title}
               </h3>
               <p className="text-sm">{item.desc}</p>
@@ -440,7 +511,7 @@ const Home = () => {
                     alt={item.title}
                     className="w-full h-48 object-cover rounded-xl mb-4"
                   />
-                  <h3 className="text-xl font-semibold text-indigo-600 mb-2">
+                  <h3 className="text-xl font-semibold text-green-600 mb-2">
                     {item.title}
                   </h3>
                   <p className="text-sm">{item.desc}</p>
@@ -458,6 +529,7 @@ const Home = () => {
 
       </div>
 
+<<<<<<< HEAD
 {/* === Features Section with Slideshow (your original design kept) === */}
 <section className="bg-slate-800 text-white py-16 px-6">
   <h2 className="text-3xl font-bold text-center mb-10">
@@ -504,6 +576,42 @@ const Home = () => {
             viewport={{ once: true }}
             transition={{ delay: i * 0.2 }}
             className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
+=======
+      {/* Features */}
+      <section className="bg-slate-800 text-white py-16 px-6">
+        <h2 className="text-3xl font-bold text-center mb-10">
+          Why Choose Cloudhouse247?
+        </h2>
+        <div className="hidden md:grid max-w-5xl mx-auto md:grid-cols-3 gap-8 text-center">
+          {features.map((item, i) => (
+            <motion.div
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.2 }}
+              className="bg-[#F3F4F6] text-slate-800 rounded-xl p-6 shadow-lg"
+            >
+              <img
+                src={item.img}
+                alt={item.title}
+                className="w-full h-48 object-contain rounded-xl mb-4"
+              />
+              <p className="text-lg text-slate-800 font-medium">{item.title}</p>
+              <p className="text-sm text-slate-800">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+        {/* Mobile Swiper */}
+        <div className="md:hidden">
+          <Swiper
+            spaceBetween={16}
+            slidesPerView={1}
+            modules={[Autoplay, Pagination, Navigation]}
+            autoplay={{ delay: 3000 }}
+            pagination={{ clickable: true }}
+            navigation={true}
+>>>>>>> origin/Worked-on-by-Emmy
           >
             <img
               src={item.img}
@@ -609,7 +717,7 @@ const Home = () => {
               className="bg-white rounded-xl shadow-lg p-6 border border-gray-200"
             >
               <p className="italic mb-4">"{testi.quote}"</p>
-              <p className="font-semibold text-[#5B3CC4]">- {testi.name}</p>
+              <p className="font-semibold text-emerald-500">- {testi.name}</p>
             </motion.div>
           ))}
         </div>
@@ -618,7 +726,7 @@ const Home = () => {
           <div className="text-center mt-10">
             <button
               onClick={() => setShowAll(!showAll)}
-              className="px-6 py-3 bg-[#5B3CC4] text-white font-semibold rounded-lg hover:bg-[#4629a3] transition"
+              className="px-6 py-3 bg-emerald-500 text-white font-semibold rounded-lg hover:bg-emerald-600 transition"
             >
               {showAll ? "View Less" : "View More"}
             </button>
@@ -629,9 +737,25 @@ const Home = () => {
   })()}
 </section>
 
+{/* FAQ Accordion Section */}
+  <section className="max-w-4xl mx-auto my-4 px-6 py-12">
+  <h2 className="text-3xl font-heading text-center font-bold mb-10">
+    Frequently Asked Questions
+  </h2>
 
+  <Accordion type="single" collapsible className="space-y-4">
+    {faqs.map((item, i) => (
+      <div key={i} question={item.question} answer={item.answer} />
+    ))}
+  </Accordion>
+</section>
+
+    <div className="">
       <Footer />
+
     </div>
+
+  </div>
   );
 };
 

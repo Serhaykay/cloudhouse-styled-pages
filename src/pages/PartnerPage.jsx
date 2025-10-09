@@ -75,7 +75,7 @@ const PartnerPage = () => {
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-[#5B3CC4] mb-6"
+          className="text-4xl md:text-5xl font-bold text-[#5B3C] mb-6"
         >
           Partner With Cloudhouse247
         </motion.h1>
