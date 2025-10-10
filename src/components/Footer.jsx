@@ -144,7 +144,7 @@ const Footer = () => {
           <ul className="flex space-x-6 text-xl mb-6">
             <li>
               <a
-                href="https://www.linkedin.com/company/cloudhouse"
+                href="https://www.linkedin.com/company/cloudhouse247/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#F9FAFB] hover:text-[#10B981]"
@@ -174,7 +174,7 @@ const Footer = () => {
             </li>
             <li>
               <a
-                href="https://www.facebook.com/cloudhouse"
+                href="https://www.facebook.com/share/1GwwJQ7hFL/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#F9FAFB] hover:text-[#10B981]"
