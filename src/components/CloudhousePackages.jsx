@@ -18,7 +18,7 @@ const Packages = () => {
       ],
       button: "Get Started",
       highlight: false,
-      link: null,
+      link: "/contact",
     },
     {
       name: "Growth Package",
@@ -39,7 +39,7 @@ const Packages = () => {
       ],
       button: "Get Started",
       highlight: true, // most popular
-      link: null,
+      link: "/contact",
     },
     {
       name: "Custom Package",
