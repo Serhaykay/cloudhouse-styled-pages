@@ -125,7 +125,7 @@ const About = () => {
             />
             <h3 className="font-semibold text-emerald-500">Usman A.O</h3>
             <p className="text-sm text-gray-700">Developer</p>
-            <p className="text-sm text-gray-800">co. founder</p>
+            <p className="text-sm text-gray-800 font-bold italic font-[cursive]">co. founder</p>
           </div>
           <div className="text-center">
             <img
@@ -137,7 +137,7 @@ const About = () => {
             />
             <h3 className="font-semibold text-emerald-500">Raph A.</h3>
             <p className="text-sm text-gray-700">Project Manager</p>
-            <p className="text-sm text-gray-800">co. founder</p>
+            <p className="text-sm text-gray-800 font-bold italic font-[cursive]">co. founder</p>
 
           </div>
           <div className="text-center">
@@ -150,7 +150,7 @@ const About = () => {
             />
             <h3 className="font-semibold text-emerald-500">Emmy A.O</h3>
             <p className="text-sm text-gray-700">Developer</p>
-            <p className="text-sm text-gray-800">co. founder</p>
+            <p className="text-sm text-gray-800 font-bold italic font-[cursive]">co. founder</p>
 
           </div>
         </div>
