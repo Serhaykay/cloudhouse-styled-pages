@@ -52,7 +52,7 @@ const App = () => {
               {/* <Route path='/404' element={<NotFoundPage />} /> */}
               {/* <Redirect from="*" to="/404" /> */}
             </Routes>
-            <WhatsAppButton />
+            {/* <WhatsAppButton /> */}
             <NewsletterPopup />
           </div>
 
