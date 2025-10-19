@@ -40,14 +40,14 @@ const Portfolio = () => {
         'https://cdn.shopify.com/videos/c/o/v/3c7c75db6eee4e19a6139d7abfbe20fb.mp4',
       thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/bikes.png?v=1760610887',
     },
-    {
-      title: 'Herbal Landing Page Design',
-      description:
-        'A thoughtfully crafted Shopify landing page designed for a herbal medicine brand. Built using Shopify Page Builder, it highlights natural wellness products through clean visuals, persuasive copy, and an intuitive layout that drives trust and conversions. Developed and showcased by Cloudhouse247.',
-      video:
-        'https://cdn.shopify.com/videos/c/o/v/1a69402822724a63b029259480888feb.mp4',
-      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/cloudhouse-herbal.png?v=1760877808',
-    },
+    // {
+    //   title: 'Herbal Landing Page Design',
+    //   description:
+    //     'A thoughtfully crafted Shopify landing page designed for a herbal medicine brand. Built using Shopify Page Builder, it highlights natural wellness products through clean visuals, persuasive copy, and an intuitive layout that drives trust and conversions. Developed and showcased by Cloudhouse247.',
+    //   video:
+    //     'https://cdn.shopify.com/videos/c/o/v/1a69402822724a63b029259480888feb.mp4',
+    //   thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/cloudhouse-herbal.png?v=1760877808',
+    // },
   ];
 
   // Close modal when clicking outside video area
