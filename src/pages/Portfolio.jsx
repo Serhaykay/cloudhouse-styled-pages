@@ -9,6 +9,14 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: 'Shopify Landing Page Design',
+      description:
+      'showcasing our expertise in creating high-quality Shopify solutions. This landing page was fully designed and built using the Shopify Page Builder, focusing on clean design, modern aesthetics, and smooth user experience.',
+      video:
+      'https://cdn.shopify.com/videos/c/o/v/3c7c75db6eee4e19a6139d7abfbe20fb.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/bikes.png?v=1760610887',
+    },
+    {
       title: 'E-commerce Website for Fashion Brand',
       description:
         'A fully responsive react based project with custom features, fetching data using GraphQL and seamless user experience.',
@@ -17,28 +25,20 @@ const Portfolio = () => {
       thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/ecommerce-brand.png?v=1759999893',
     },
     {
+      title: 'Happy client site development',
+      description:
+      'Developed a fully responsive website using HTML, CSS, and JavaScript, ensuring optimal performance across devices. Implemented clean, maintainable code and intuitive design to enhance usability. Delivered a solution that met the client’s requirements while demonstrating strong front-end development expertise.',
+      video:
+      'https://cdn.shopify.com/videos/c/o/v/63fe023c0ef74a39a47b14a210f61812.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/happy-client-site.png?v=1760000452',
+    },
+    {
       title: 'Synthesia website clone',
       description:
         'A Synthesia-inspired website clone with HTML, CSS, and JavaScript, highlighting frontend development, layout design, and DOM interactivity.',
       video:
         'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
       thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/synthesia.png?v=1760000224',
-    },
-    {
-      title: 'Happy client site development',
-      description:
-        'Developed a fully responsive website using HTML, CSS, and JavaScript, ensuring optimal performance across devices. Implemented clean, maintainable code and intuitive design to enhance usability. Delivered a solution that met the client’s requirements while demonstrating strong front-end development expertise.',
-      video:
-        'https://cdn.shopify.com/videos/c/o/v/63fe023c0ef74a39a47b14a210f61812.mp4',
-      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/happy-client-site.png?v=1760000452',
-    },
-    {
-      title: 'Shopify Landing Page Design',
-      description:
-        'showcasing our expertise in creating high-quality Shopify solutions. This landing page was fully designed and built using the Shopify Page Builder, focusing on clean design, modern aesthetics, and smooth user experience.',
-      video:
-        'https://cdn.shopify.com/videos/c/o/v/3c7c75db6eee4e19a6139d7abfbe20fb.mp4',
-      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/bikes.png?v=1760610887',
     },
     {
       title: 'Herbal Landing Page Design',
