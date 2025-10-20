@@ -9,6 +9,14 @@ const Portfolio = () => {
 
   const projects = [
     {
+      title: 'Clothing Brand Shopify Store',
+      description:
+      'A visually engaging and fully responsive Shopify store built for a modern clothing brand using Shopify Page Builder. The project emphasizes clean aesthetics, intuitive navigation, and seamless shopping experience — showcasing strong skills in Shopify customization, product presentation, and conversion-focused design.',
+      video:
+      'https://cdn.shopify.com/videos/c/o/v/14b6b90ccc2d4bc8868296a857aa794b.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/haykaycloudhouse.png?v=1760980534',
+    },
+    {
       title: 'Shopify Landing Page Design',
       description:
       'showcasing our expertise in creating high-quality Shopify solutions. This landing page was fully designed and built using the Shopify Page Builder, focusing on clean design, modern aesthetics, and smooth user experience.',
@@ -25,6 +33,14 @@ const Portfolio = () => {
       thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/ecommerce-brand.png?v=1759999893',
     },
     {
+      title: 'Herbal store Landing Page Design',
+      description:
+        'A thoughtfully crafted Shopify landing page designed for a herbal medicine brand. Built using Shopify Page Builder, it highlights natural wellness products through clean visuals, persuasive copy, and an intuitive layout that drives trust and conversions. Developed and showcased by Cloudhouse247.',
+      video:
+        'https://cdn.shopify.com/videos/c/o/v/d67f4c2c17904619bed69d73bff3b26f.mp4',
+      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/cloudhouse-herbal.png?v=1760877808',
+    },
+    {
       title: 'Happy client site development',
       description:
       'Developed a fully responsive website using HTML, CSS, and JavaScript, ensuring optimal performance across devices. Implemented clean, maintainable code and intuitive design to enhance usability. Delivered a solution that met the client’s requirements while demonstrating strong front-end development expertise.',
@@ -39,14 +55,6 @@ const Portfolio = () => {
       video:
         'https://cdn.shopify.com/videos/c/o/v/941015b57f4a4064a9ca69db45ad3244.mp4',
       thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/synthesia.png?v=1760000224',
-    },
-    {
-      title: 'Herbal Landing Page Design',
-      description:
-        'A thoughtfully crafted Shopify landing page designed for a herbal medicine brand. Built using Shopify Page Builder, it highlights natural wellness products through clean visuals, persuasive copy, and an intuitive layout that drives trust and conversions. Developed and showcased by Cloudhouse247.',
-      video:
-        'https://cdn.shopify.com/videos/c/o/v/d67f4c2c17904619bed69d73bff3b26f.mp4',
-      thumbnail: 'https://cdn.shopify.com/s/files/1/0601/9386/5826/files/cloudhouse-herbal.png?v=1760877808',
     },
   ];
 
